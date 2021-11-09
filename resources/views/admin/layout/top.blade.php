@@ -1,6 +1,6 @@
 <meta charset="utf-8" />
-<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+<link rel="apple-touch-icon" sizes="76x76" href="{{ asset('public/assets/img/apple-icon.png') }}">
+<link rel="icon" type="image/png" href="{{ asset('public/assets/img/favicon.png') }}">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <title>
   Material Dashboard Dark Edition by Creative Tim
@@ -12,4 +12,4 @@
 <!-- CSS Files -->
 <link rel="stylesheet" href="{{ asset('public/assets/css/material-dashboard.css') }}"/>
 <!-- CSS Just for demo purpose, don't include it in your project -->
-<link href="../assets/demo/demo.css" rel="stylesheet" />
+<link rel="stylesheet" href="{{ asset('public/assets/demo/demo.css') }}"/>
