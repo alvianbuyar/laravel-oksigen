@@ -22,7 +22,7 @@
   </div>
 
   {{-- theme navigation --}}
-    @include('admin.layout.theme')
+    {{-- @include('admin.layout.theme') --}}
   {{-- theme navigation --}}
 
   {{-- bottom --}}

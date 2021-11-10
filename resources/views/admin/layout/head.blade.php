@@ -10,7 +10,7 @@
         <span class="navbar-toggler-icon icon-bar"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end">
-        <form class="navbar-form">
+        {{-- <form class="navbar-form">
           <div class="input-group no-border">
             <input type="text" value="" class="form-control" placeholder="Search...">
             <button type="submit" class="btn btn-default btn-round btn-just-icon">
@@ -18,16 +18,16 @@
               <div class="ripple-container"></div>
             </button>
           </div>
-        </form>
+        </form> --}}
         <ul class="navbar-nav">
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link" href="javascript:void(0)">
               <i class="material-icons">dashboard</i>
               <p class="d-lg-none d-md-block">
                 Stats
               </p>
             </a>
-          </li>
+          </li> --}}
           <li class="nav-item dropdown">
             <a class="nav-link" href="javscript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="material-icons">notifications</i>
@@ -44,13 +44,26 @@
               <a class="dropdown-item" href="javascript:void(0)">Another One</a>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="javscript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="material-icons">person</i>
               <p class="d-lg-none d-md-block">
-                Account
+                Some Actions
               </p>
             </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="javascript:void(0)" > <i class="fa fa-user" style="margin-right: 2mm"> </i>My profile</a>
+              <a class="dropdown-item" href="javascript:void(0)"> <i class="fa fa-cog" style="margin-right: 2mm"> </i>Setting</a>
+              <a class="dropdown-item" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                  <i class="fa fa-power-off" style="margin-right: 2mm"> </i>
+                  {{ __('Logout') }}
+              </a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+              </form>
+            </div>
           </li>
         </ul>
       </div>
