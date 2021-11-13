@@ -7,18 +7,33 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header card-header-primary card-header d-flex justify-content-between align-items-center">
-              <h4 class="card-title" style="margin-left: 5mm">Categories Data Table</h4>
-              <a href="{{route('productcategories.create')}}" class="btn btn-success btn-round">Add</a>
+              <h4 class="card-title" style="margin-left: 5mm">Product Data Table</h4>
+              <a href="{{route('addproduct.create')}}" class="btn btn-success btn-round">Add</a>
             </div>
             <div class="card-body">
               <div class="table-responsive table-striped table-bordered">
                 <table class="table">
                   <thead class=" text-primary">
                     <th>
-                      No
+                      Number
                     </th>
                     <th>
-                      Categories Name
+                      Product
+                    </th>
+                    <th>
+                      Categories
+                    </th>
+                    <th>
+                      Stock
+                    </th>
+                    <th>
+                      Description
+                    </th>
+                    <th>
+                      Product Price
+                    </th>
+                    <th>
+                      Tube Price
                     </th>
                     <th>
                       Edit
@@ -31,11 +46,16 @@
                     
                     @foreach($data as $i=>$row)
                     <tr>
-                        <td>{{++$i}}</td>
-                        <td>{{$row->categories_name}}</td>
-                        <td><a href="{{route('productcategories.edit', $row->id)}}" class='btn btn-success'>Edit</a></td>
+                        <td>{{$row->product_seriesnumber}}</td>
+                        <td>{{$row->product_name}}</td>
+                        <td>{{$row->id_categories}}</td>
+                        <td>{{$row->stock}}</td>
+                        <td>{{$row->description}}</td>
+                        <td>{{$row->product_price}}</td>
+                        <td>{{$row->tube_price}}</td>
+                        <td><a href="{{route('addproduct.edit', $row->id)}}" class='btn btn-success'>Edit</a></td>
                         <td>
-                            <form action="{{route('productcategories.destroy', $row->id)}}" method="post">
+                            <form action="{{route('addproduct.destroy', $row->id)}}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit">Delete</button>

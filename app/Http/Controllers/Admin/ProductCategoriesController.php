@@ -46,11 +46,11 @@ class ProductCategoriesController extends Controller
             'txtcategories_name' => 'required',
         ]);
 
-        $categories = new productcategories([
+        $categories_data = new productcategories([
             'categories_name' => $request->get('txtcategories_name'),
         ]);
 
-        $categories->save();
+        $categories_data->save();
         return redirect('admin\productcategories')->with('Success', 'category data saved successfully');
     }
 

@@ -34,7 +34,7 @@
                   <div class="col-md-12">
                     <div class="form-group" style="margin: 10mm">
                         <label for="text-input" class=" form-control-label">Categories Name</label>
-                        <input type="text" id="text-input" name="txtcategories_name" class="form-control">
+                        <input type="text" id="text-input" name="txtcategories_name" value="{{$data->categories_name}}" class="form-control">
                     </div>
                   </div>
                 </div>
