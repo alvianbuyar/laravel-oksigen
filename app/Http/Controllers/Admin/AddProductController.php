@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\productcategories;
 use App\addproduct;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AddProductController extends Controller
 {
@@ -14,6 +16,7 @@ class AddProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         //
@@ -27,11 +30,13 @@ class AddProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
         //
         $categories_data = productcategories::all();
         $pagename = 'Add Product Form';
+
         return view('admin.addproduct.create', compact('pagename', 'categories_data'));
     }
 
@@ -49,17 +54,22 @@ class AddProductController extends Controller
             'txtproduct_name' => 'required',
             'txtid_categories' => 'required',
             'txtstock' => 'required',
-            'txtdescription' => 'required',
+            'product_image' => 'mimes:jpeg,png,jpg,svg | required',
             'txtproduct_price' => 'required',
             'txttube_price' => 'required',
         ]);
+
+        $imgName = $request->product_image->getClientOriginalName() . '-' . time()
+            . '-' . $request->product_image->extension();
+
+        $request->product_image->move(public_path() . '/productImage', $imgName);
 
         $product_data = new addproduct([
             'product_seriesnumber' => $request->get('txtproduct_seriesnumber'),
             'product_name' => $request->get('txtproduct_name'),
             'id_categories' => $request->get('txtid_categories'),
             'stock' => $request->get('txtstock'),
-            'description' => $request->get('txtdescription'),
+            'product_image' => $imgName,
             'product_price' => $request->get('txtproduct_price'),
             'tube_price' => $request->get('txttube_price'),
         ]);
@@ -109,17 +119,32 @@ class AddProductController extends Controller
             'txtproduct_name' => 'required',
             'txtid_categories' => 'required',
             'txtstock' => 'required',
-            'txtdescription' => 'required',
+            'product_image' => 'mimes:jpeg,png,jpg,svg | required',
             'txtproduct_price' => 'required',
             'txttube_price' => 'required',
         ]);
 
         $product = addproduct::find($id);
+
+        if ($request->product_image != '') {
+            $path = public_path() . '/productImage/';
+
+            if ($product->product_image != '' && $product->product_image != null) {
+                $file_old = $path . $product->product_image;
+                unlink($file_old);
+            }
+        }
+
+        $imgName = $request->product_image->getClientOriginalName() . '-' . time()
+            . '-' . $request->product_image->extension();
+
+        $request->product_image->move(public_path() . '/productImage', $imgName);
+
         $product->product_seriesnumber = $request->get('txtproduct_seriesnumber');
         $product->product_name = $request->get('txtproduct_name');
         $product->id_categories = $request->get('txtid_categories');
         $product->stock = $request->get('txtstock');
-        $product->description = $request->get('txtdescription');
+        $product->product_image = $request->get('product_image') . $imgName;
         $product->product_price = $request->get('txtproduct_price');
         $product->tube_price = $request->get('txttube_price');
 
@@ -137,6 +162,11 @@ class AddProductController extends Controller
     {
         //
         $product = addproduct::find($id);
+
+        $file = public_path('/productImage/') . $product->product_image;
+        if (file_exists($file)) {
+            @unlink($file);
+        }
 
         $product->delete();
         return redirect('admin\addproduct')->with('Success', 'category data deleted successfully');
