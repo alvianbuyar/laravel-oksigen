@@ -1,5 +1,6 @@
 <?php
 
+use App\task;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -27,4 +28,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', 'Admin\DashboardController@index');
     Route::resource('/productcategories', 'Admin\ProductCategoriesController');
     Route::resource('/addproduct', 'Admin\AddProductController');
+    Route::resource('/task', 'Admin\TaskController');
+    Route::resource('/purchaselog', 'Admin\PurchaseLogController');
+    Route::resource('/loanlog', 'Admin\LoanLogController');
+    Route::resource('/returnlog', 'Admin\ReturnLogController');
 });

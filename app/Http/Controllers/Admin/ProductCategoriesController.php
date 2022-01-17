@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\addproduct;
 use App\Http\Controllers\Controller;
 use App\productcategories;
 use Illuminate\Http\Request;
@@ -110,6 +111,7 @@ class ProductCategoriesController extends Controller
     {
         //
         $categories = productcategories::find($id);
+        // $product = addproduct::find($id);
 
         $categories->delete();
         return redirect('admin\productcategories')->with('Success', 'category data deleted successfully');

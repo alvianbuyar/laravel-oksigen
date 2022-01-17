@@ -11,8 +11,8 @@ class productcategories extends Model
         'categories_name'
     ];
 
-    public function addProduct()
+    public function addproducts()
     {
-        return $this->hasMany(addproduct::class);
+        return $this->hasMany('App\addproduct', 'id_categories', 'id');
     }
 }

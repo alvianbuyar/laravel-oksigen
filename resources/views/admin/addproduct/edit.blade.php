@@ -7,7 +7,7 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header card-header-primary">
-              <h4 class="card-title">Add New Product</h4>
+              <h4 class="card-title">Edit New Product</h4>
             </div>
             <div class="card-body">
 
@@ -26,58 +26,53 @@
               @endif
 
               <form action="{{route('addproduct.update', $data->id)}}" method="post" enctype="multipart/form-data" class="form-horizontal">
-                @method('PATCH')
-                @csrf
+              @method('PATCH')
+              @csrf
 
               <form>
                 <div class="row">
                     <div class="col-md-12">
                       <div class="form-group" style="margin: 3mm">
-                        <label for="text-input" class=" form-control-label">Product Series Number</label>
+                        <label for="text-input" class=" form-control-label ">Product Series Number</label>
                         <input type="text" id="text-input" name="txtproduct_seriesnumber" value="{{$data->product_seriesnumber}}" class="form-control">
                       </div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-8">
                       <div class="form-group" style="margin: 3mm">
-                        <label for="text-input" class=" form-control-label">Product Name</label>
+                        <label for="text-input" class="form-control-label">Product Name</label>
                         <input type="text" id="text-input" name="txtproduct_name" value="{{$data->product_name}}" class="form-control">
                       </div>
                     </div>
-                  </div>
-                  <div class="row form-group">
-                    <div class="col col-md-3"><label for="select" class=" form-control-label">Product Categories</label></div>
-                    <div class="col-12 col-md-9">
-                        <select name="txtid_categories" id="select" class="form-control">
+                      <div class="col-md-4">
+                        <div class="form-group" style="margin: 3mm">
+                          <label for="select" class=" form-control-label">Product Categories</label>
+                          <select name="txtid_categories" id="select" class="form-control">
 
-                           @foreach($categories_data as $productcategories)
-                           <option value={{$productcategories->id}}>
-                                @if($productcategories->id==$data->id_categories)
-                                    selected
-                                @endif
-
+                            @foreach($categories_data as $productcategories)
+                            <option value={{$productcategories->id}} class="alert-primary"
+                              @if($productcategories->id==$data->id_categories)
+                                selected
+                              @endif
+                            >
                             {{$productcategories->categories_name}}</option>
 
-                           @endforeach
+                            @endforeach
 
-                        </select>
-                    </div>
-                </div>
+                          </select>
+                        </div>
+                      </div>
                     <div class="col-md-12">
                       <div class="form-group" style="margin: 3mm">
                         <label for="text-input" class=" form-control-label">Stock</label>
                         <input type="text" id="text-input" name="txtstock" value="{{$data->stock}}" class="form-control">
                       </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-group" style="margin: 3mm">
-                        <label for="text-input" class=" form-control-label">Description</label>
-                        <input type="text" id="text-input" name="txtdescription" value="{{$data->description}}" class="form-control">
+                    <div class="col-md-12 ">
+                      <div class="form-control-group" style="margin: 3mm">
+                        <label for="file">Choose Image</label>
+                        <input type="file" name="product_image" value="{{ $data->product_image }}" class="form-control">
                       </div>
                     </div>
-                  </div>
-                  <div class="row">
                     <div class="col-md-12">
                       <div class="form-group" style="margin: 3mm">
                         <label for="text-input" class=" form-control-label">Product Price</label>

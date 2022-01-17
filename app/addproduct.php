@@ -12,13 +12,19 @@ class addproduct extends Model
         'product_name',
         'id_categories',
         'stock',
-        'description',
+        // 'description',
+        'product_image',
         'product_price',
         'tube_price',
     ];
 
-    public function productCategories()
+    public function productcategory()
     {
-        return $this->hasOne(productcategories::class);
+        return $this->belongsTo('App\productcategories', 'id_categories');
+    }
+
+    public function homesfunc()
+    {
+        return $this->hasMany('App\home', 'id_addproducts', 'id');
     }
 }
