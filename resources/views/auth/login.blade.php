@@ -15,7 +15,7 @@
           </h3>
           <p class="text-white mb-3">Lakukan login sebelum anda melakukan transaksi dan peminjaman tabung oksigen. Jika anda masih belum mempunyai akun silahkan melakukan pendaftaran terlebih dahulu</p>
           <div class="btn-wrapper">
-            <a href="{{ route('register') }}" class="btn btn-info">Go To Register Page</a>
+            <a href="{{ route('register') }}" class="btn btn-info">Daftar Akun</a>
           </div>
         </div>
         <div class="col-lg-6 mb-lg-auto">

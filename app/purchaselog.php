@@ -15,4 +15,14 @@ class purchaselog extends Model
         'purchase_payment',
         'purchase_loan'
     ];
+
+    public function details()
+    {
+        return $this->hasMany('App\detail', 'id_addproducts', 'id');
+    }
+
+    public function users()
+    {
+        return $this->belongsTo('App\User', 'id_users');
+    }
 }

@@ -23,9 +23,9 @@
                     <th>
                       Categories
                     </th>
-                    <th>
+                    {{-- <th>
                       Stock
-                    </th>
+                    </th> --}}
                     <th>
                       Image
                     </th>
@@ -49,7 +49,7 @@
                         <td>{{$row->product_seriesnumber}}</td>
                         <td>{{$row->product_name}}</td>
                         <td>{{$row->productcategory->categories_name}}</td>
-                        <td>{{$row->stock}}</td>
+                        {{-- <td>{{$row->stock}}</td> --}}
                         <td>{{$row->product_image}}</td>
                         <td>{{$row->product_price}}</td>
                         <td>{{$row->tube_price}}</td>

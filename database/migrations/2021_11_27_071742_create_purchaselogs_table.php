@@ -15,12 +15,12 @@ class CreatePurchaselogsTable extends Migration
     {
         Schema::create('purchaselogs', function (Blueprint $table) {
             $table->id();
-            $table->integer('purchase_number');
-            $table->string('purchase_name');
-            $table->string('purchase_address');
-            $table->integer('purchase_callnumber');
-            $table->string('purchase_payment')->nullable();
-            $table->boolean('purchase_loan');
+            $table->unsignedBigInteger('id_users');
+            $table->foreign('id_users')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('purchase_status');
+            $table->date('purchase_date');
+            $table->integer('purchase_total');
+            $table->integer('purchase_price');
             $table->timestamps();
         });
     }

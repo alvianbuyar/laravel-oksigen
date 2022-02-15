@@ -31,5 +31,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('/task', 'Admin\TaskController');
     Route::resource('/purchaselog', 'Admin\PurchaseLogController');
     Route::resource('/loanlog', 'Admin\LoanLogController');
-    Route::resource('/returnlog', 'Admin\ReturnLogController');
+    Route::resource('/detail', 'Admin\DetailController');
 });

@@ -18,13 +18,13 @@
         <li class="nav-item ">
           <a class="nav-link" href="{{ url('/admin/addproduct') }}">
             <i class="material-icons">library_add</i>
-            <p>Add Product</p>
+            <p>Tambah Produk</p>
           </a>
         </li>
         <li class="nav-item ">
           <a class="nav-link" href="{{ url('/admin/productcategories') }}">
             <i class="material-icons">content_paste</i>
-            <p>Product Categories</p>
+            <p>Kategori</p>
           </a>
         </li>
         <li class="nav-item ">
@@ -36,19 +36,13 @@
         <li class="nav-item ">
           <a class="nav-link" href="{{ url('/admin/purchaselog') }}">
             <i class="material-icons">account_balance_wallet</i>
-            <p>Purchase Log</p>
+            <p>Pemesan</p>
           </a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link" href="{{ url('/admin/loanlog') }}">
+          <a class="nav-link" href="{{ url('/admin/detail') }}">
             <i class="material-icons">auto_stories</i>
-            <p>Loan Log</p>
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="{{ url('/admin/returnlog') }}">
-            <i class="material-icons">description</i>
-            <p>Return Log</p>
+            <p>Detail</p>
           </a>
         </li>
         <!-- <li class="nav-item active-pro ">

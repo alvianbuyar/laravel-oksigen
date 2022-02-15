@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\detail;
 use App\Http\Controllers\Controller;
-use App\returnlog;
 use Illuminate\Http\Request;
 
-class ReturnLogController extends Controller
+class DetailController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class ReturnLogController extends Controller
     public function index()
     {
         //
-        $pagename = 'Return Log';
-        $data = returnlog::all();
-        return view('admin.returnlog.index', compact('data', 'pagename'));
+        $pagename = 'Detail';
+        $data = detail::all();
+        return view('admin.detail.index', compact('data', 'pagename'));
     }
 
     /**
@@ -85,9 +85,9 @@ class ReturnLogController extends Controller
     public function destroy($id)
     {
         //
-        $return = returnlog::find($id);
+        $loan = detail::find($id);
 
-        $return->delete();
-        return redirect('admin\returnlog')->with('Success', 'log data deleted successfully');
+        $loan->delete();
+        return redirect('admin\detail')->with('Success', 'detail log deleted successfully');
     }
 }

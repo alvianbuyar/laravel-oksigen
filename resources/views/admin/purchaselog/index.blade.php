@@ -17,22 +17,28 @@
                       No
                     </th>
                     <th>
-                      Number
-                    </th>
-                    <th>
                       Name
                     </th>
                     <th>
                       Address
                     </th>
                     <th>
-                      Call Number
+                      Phone Number
                     </th>
                     <th>
-                      Payment
+                      KTP
                     </th>
                     <th>
                       Loan
+                    </th>
+                    <th>
+                      Purchase Date
+                    </th>
+                    <th>
+                      Price
+                    </th>
+                    <th>
+                      Total
                     </th>
                     <th>
                       Delete
@@ -43,12 +49,13 @@
                     @foreach($data as $i=>$row)
                     <tr>
                         <td>{{++$i}}</td>
-                        <td>{{$row->purchase_number}}</td>
-                        <td>{{$row->purchase_name}}</td>
-                        <td>{{$row->purchase_address}}</td>
-                        <td>{{$row->purchase_callnumber}}</td>
-                        <td>{{$row->purchase_payment}}</td>
-                        <td>{{$row->purchase_loan}}</td>
+                        <td>{{$row->users->name}}</td>
+                        <td>{{$row->users->address}}</td>
+                        <td>{{$row->users->phone_number}}</td>
+                        <td>{{$row->users->ktp_image}}</td>
+                        <td>{{$row->purchase_date}}</td>
+                        <td>{{$row->purchase_total}}</td>
+                        <td>{{$row->purchase_price}}</td>
                         <td>
                             <form action="{{route('purchaselog.destroy', $row->id)}}" method="post">
                                 @csrf

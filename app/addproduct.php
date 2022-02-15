@@ -23,8 +23,8 @@ class addproduct extends Model
         return $this->belongsTo('App\productcategories', 'id_categories');
     }
 
-    public function homesfunc()
+    public function details()
     {
-        return $this->hasMany('App\home', 'id_addproducts', 'id');
+        return $this->hasMany('App\detail', 'id_addproducts', 'id');
     }
 }

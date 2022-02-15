@@ -20,7 +20,6 @@ class CreateAddproductsTable extends Migration
             $table->unsignedBigInteger('id_categories');
             $table->foreign('id_categories')->references('id')->on('productcategories')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('stock');
-            // $table->string('description');
             $table->string('product_image')->nullable();
             $table->integer('product_price');
             $table->integer('tube_price');

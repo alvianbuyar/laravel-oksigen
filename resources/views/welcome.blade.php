@@ -99,7 +99,7 @@
               <div class="col-lg-5 mb-5 mb-lg-0 ">
                 <h2 class="text-white font-weight-light">Dapatkan oksigen dengan mudah</h2>
                 <p class="text-white mt-4">Disini kami menyediakan oksigen + regulator. Selain melakukan transaksi, anda juga dapat meminjam tabung oksigen dengan mudah. Silahkan cek informasi tata cara melakukan transaksi dan peminjaman</p>
-                <a href="./docs/1.0/components/alerts.html" class="btn btn-warning mt-4">See all details</a>
+                <a href="./docs/1.0/components/alerts.html" class="btn btn-warning mt-4">Lihat Detail</a>
               </div>
               <div class="col-lg-6">
                 <div id="carouselExampleControls" class="carousel slide">
