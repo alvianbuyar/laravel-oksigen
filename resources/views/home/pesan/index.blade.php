@@ -38,7 +38,7 @@
                         </tbody>
                     </table>
                     <a href="{{ route('home') }}" class="btn btn-warning" style="margin-right: 3mm">Kembali</a>
-                    <button type="submit" class="btn btn-primary" style="padding-inline: 20mm">Masukkan Keranjang</button>
+                    <button type="submit" class="btn btn-primary" style="padding-inline: 17mm">Masukkan Keranjang</button>
                   </form>
               </div>
               <div class="col-lg-6">

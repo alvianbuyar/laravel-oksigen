@@ -8,6 +8,7 @@ use App\purchaselog;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
+use UxWeb\SweetAlert\SweetAlert;
 
 class PesanController extends Controller
 {
@@ -73,6 +74,7 @@ class PesanController extends Controller
         $purchase->purchase_total = $purchase->purchase_total + ($data->product_price + $data->tube_price) * $request->total;
         $purchase->update();
 
+        alert()->success('Pesanan dimasukkan keranjang', 'Sukses');
         return redirect('home');
     }
 }

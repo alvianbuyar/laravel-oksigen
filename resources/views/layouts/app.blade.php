@@ -21,9 +21,12 @@
   <link href="{{ asset('public/asset/css/blk-design-system.css?v=1.0.0') }}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{{ asset('public/asset/demo/demo.css') }}" rel="stylesheet" />
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body class="index-page">
+  @include('sweet::alert')
   <div id="app">
       <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="100">
           <div class="container">
