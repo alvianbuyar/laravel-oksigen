@@ -20,6 +20,8 @@ class CreateDetailsTable extends Migration
             $table->foreign('id_purchaselogs')->references('id')->on('purchaselogs')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('id_addproducts')->references('id')->on('addproducts')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('status');
+            $table->integer('total_product');
+            $table->integer('total_detail');
             $table->timestamps();
         });
     }

@@ -18,6 +18,7 @@
 <script src="{{ asset('public/assets/js/material-dashboard.js') }}"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="{{ asset('public/assets/demo/demo.js') }}"></script>
+
 <script>
   $(document).ready(function() {
     $().ready(function() {
@@ -180,6 +181,7 @@
     });
   });
 </script>
+
 <script>
   $(document).ready(function() {
     // Javascript method's body can be found in assets/js/demos.js
@@ -207,5 +209,20 @@
 
         } );
     });
+</script>
 
+<script src="{{ asset('public/assets/dataTables/datatables.min.js') }}"></script>
+<script>
+  $(document).ready(function() {
+    $('#datatables').DataTable( {
+        ordering: false,
+        autoWidth: false,
+        columnDefs: [
+            {
+                targets: ['_all'],
+                className: 'mdc-data-table__cell'
+            }
+        ]
+    } );
+} );
 </script>

@@ -25,20 +25,17 @@
 
               @endif
 
-              <form action="{{route('task.store')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
-              @csrf
-
-              <form>
+              <form action="{{route('task.store')}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="row">
                   <div class="col-md-12">
-                    <div class="form-group" style="margin: 10mm">
+                    <div class="form-group" style="margin: 3mm; margin-top: 10mm">
                       <label for="text-input" class=" form-control-label">Task Description</label>
                       <input type="text" id="text-input" name="txttask_description" class="form-control">
                     </div>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary pull-right">Save</button>
-                <div class="clearfix"></div>
+                <button type="submit" class="btn btn-primary pull-right" style="padding-inline: 15mm">Save</button>
               </form>
             </div>
           </div>

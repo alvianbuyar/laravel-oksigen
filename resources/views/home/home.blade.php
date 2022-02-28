@@ -56,9 +56,7 @@
             <div class="card-footer text-center">
               <h6>{{$row->product_name}}</h6>
               <p style="margin: -2mm auto 4mm auto">Rp. {{$row->product_price}}</p>
-              <button type="submit" class="btn btn-primary btn-block">
-                Beli
-              </button>
+              <a href="{{ url('pesan') }}/{{ $row->id }}" class="btn btn-primary btn-block">Pesan</a>
             </div>
           </div>
         </div>
@@ -70,7 +68,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <h1 class="title">BLK•</h1>
+          <h1 class="title">CV Iswara</h1>
         </div>
         <div class="col-md-3">
           <ul class="nav">

@@ -18,6 +18,6 @@ class detail extends Model
 
     public function purchaselogs()
     {
-        return $this->belongsTo('App\purchaselog', 'id_addproducts');
+        return $this->belongsTo('App\purchaselog', 'id_purchaselogs');
     }
 }

@@ -12,8 +12,8 @@
             </div>
             <div class="card-body">
               <div class="table-responsive table-striped table-bordered">
-                <table id="myProjectTable" class="table">
-                  <thead class=" text-primary">
+                <table id="datatables" class="table">
+                  <thead class="text-primary" style="background-color: #202940">
                     <th>
                       Number
                     </th>
@@ -42,7 +42,7 @@
                       Delete
                     </th>
                   </thead>
-                  <tbody>
+                  <tbody style="background-color: #202940">
                     
                     @foreach($data as $i=>$row)
                     <tr>

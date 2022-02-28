@@ -23,6 +23,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('pesan/{id}', 'PesanController@index');
+Route::post('pesan/{id}', 'PesanController@pesan');
+// Route::resource('pesan/{id}', 'PesanController');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', 'Admin\DashboardController@index');

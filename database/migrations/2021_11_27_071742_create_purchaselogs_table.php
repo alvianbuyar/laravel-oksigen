@@ -20,7 +20,7 @@ class CreatePurchaselogsTable extends Migration
             $table->integer('purchase_status');
             $table->date('purchase_date');
             $table->integer('purchase_total');
-            $table->integer('purchase_price');
+            // $table->integer('purchase_price');
             $table->timestamps();
         });
     }

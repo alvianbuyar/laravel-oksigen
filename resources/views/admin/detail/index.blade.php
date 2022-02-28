@@ -11,38 +11,45 @@
             </div>
             <div class="card-body">
               <div class="table-responsive table-striped table-bordered">
-                <table class="table">
-                  <thead class=" text-primary">
+                <table id="datatables" class="table">
+                  <thead class=" text-primary" style="background-color: #202940">
                     <th>
                       Number
                     </th>
                     <th>
+                      Product
+                    </th>
+                    <th>
                       Name
                     </th>
-                    {{-- <th>
+                    <th>
                       Address
                     </th>
                     <th>
                       Call Number
-                    </th> --}}
-                    <th>
-                      Purchase Status
                     </th>
                     <th>
-                      Return
+                      Loan
+                    </th>
+                    <th>
+                      Purchase Date
+                    </th>
+                    <th>
+                      Tube Status
                     </th>
                     <th>
                       Delete
                     </th>
                   </thead>
-                  <tbody>
+                  <tbody style="background-color: #202940">
                     
                     @foreach($data as $i=>$row)
                     <tr>
                       <td>{{$row->addproducts->product_seriesnumber}}</td>
                       <td>{{$row->addproducts->product_name}}</td>
-                      {{-- WE NEED ADDRESS --}}
-                      {{-- WE NEED CALL NUMBER --}}
+                      <td>{{$row->purchaselogs->users->name}}</td>
+                      <td>{{$row->purchaselogs->users->address}}</td>
+                      <td>{{$row->purchaselogs->users->phone_number}}</td>
                       <td>{{$row->purchaselogs->purchase_status}}</td>
                       <td>{{$row->purchaselogs->purchase_date}}</td>
                       <td>{{$row->status}}</td>

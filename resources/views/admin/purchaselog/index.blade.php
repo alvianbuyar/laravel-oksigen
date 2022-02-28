@@ -11,16 +11,10 @@
             </div>
             <div class="card-body">
               <div class="table-responsive table-striped table-bordered">
-                <table class="table">
-                  <thead class=" text-primary">
-                    <th>
-                      No
-                    </th>
+                <table id="datatables" class="table">
+                  <thead class=" text-primary" style="background-color: #202940">
                     <th>
                       Name
-                    </th>
-                    <th>
-                      Address
                     </th>
                     <th>
                       Phone Number
@@ -35,27 +29,26 @@
                       Purchase Date
                     </th>
                     <th>
-                      Price
-                    </th>
-                    <th>
                       Total
                     </th>
+                    {{-- <th>
+                      Price
+                    </th> --}}
                     <th>
                       Delete
                     </th>
                   </thead>
-                  <tbody>
+                  <tbody style="background-color: #202940">
                     
                     @foreach($data as $i=>$row)
                     <tr>
-                        <td>{{++$i}}</td>
                         <td>{{$row->users->name}}</td>
-                        <td>{{$row->users->address}}</td>
                         <td>{{$row->users->phone_number}}</td>
                         <td>{{$row->users->ktp_image}}</td>
+                        <td>{{$row->purchase_status}}</td>
                         <td>{{$row->purchase_date}}</td>
                         <td>{{$row->purchase_total}}</td>
-                        <td>{{$row->purchase_price}}</td>
+                        {{-- <td>{{$row->purchase_price}}</td> --}}
                         <td>
                             <form action="{{route('purchaselog.destroy', $row->id)}}" method="post">
                                 @csrf

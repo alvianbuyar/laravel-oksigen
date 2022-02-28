@@ -98,7 +98,7 @@
             <div class="row justify-content-between align-items-center">
               <div class="col-lg-5 mb-5 mb-lg-0 ">
                 <h2 class="text-white font-weight-light">Dapatkan oksigen dengan mudah</h2>
-                <p class="text-white mt-4">Disini kami menyediakan oksigen + regulator. Selain melakukan transaksi, anda juga dapat meminjam tabung oksigen dengan mudah. Silahkan cek informasi tata cara melakukan transaksi dan peminjaman</p>
+                <p class="text-white mt-4">Disini kami menyediakan oksigen + regulator. Selain melakukan pemesanan, anda juga dapat meminjam tabung oksigen dengan mudah. Silahkan cek informasi tata cara melakukan pemesanan dan peminjaman</p>
                 <a href="./docs/1.0/components/alerts.html" class="btn btn-warning mt-4">Lihat Detail</a>
               </div>
               <div class="col-lg-6">
@@ -127,14 +127,13 @@
             </div>
           </div>
         </div>
-      </div>
       <div class="section section-download" id="#download-section" data-background-color="black" style="margin-top: -1cm">
         <img src="public/asset/img/path1.png" class="path">
         <div class="container">
           <div class="row justify-content-md-center">
             <div class="text-center col-md-12 col-lg-8">
               <h2 class="title">Daftarkan Diri Anda!!</h2>
-              <h4 class="description">Dapatkan oksigen lebih cepat dan mudah di CV Iswara Tiga Putra, jangan lupa untuk daftarkan diri anda terlebih dahulu sebelum melakukan transaksi dan dapatkan penawaran menarik!!</h4>
+              <h4 class="description">Dapatkan oksigen lebih cepat dan mudah di CV Iswara Tiga Putra, jangan lupa untuk daftarkan diri anda terlebih dahulu sebelum melakukan pemesanan dan dapatkan penawaran menarik!!</h4>
             </div>
             @if (Route::has('register'))
                <div class="text-center col-md-12 col-lg-8" style="margin-bottom: 3cm">

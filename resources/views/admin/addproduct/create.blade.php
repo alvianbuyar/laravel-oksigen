@@ -23,12 +23,10 @@
                   </div>
                 </div>
 
-              @endif
+              @endif              
 
-              <form action="{{route('addproduct.store')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
-              @csrf
-
-              <form action="" method="post" enctype="multipart/form-data">
+              <form action="{{route('addproduct.store')}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="row">
                     <div class="col-md-12">
                       <div class="form-group" style="margin: 3mm">
@@ -56,12 +54,6 @@
                           </select>
                         </div>
                       </div>
-                    {{-- <div class="col-md-12">
-                      <div class="form-group" style="margin: 3mm">
-                        <label for="text-input" class=" form-control-label">Stock</label>
-                        <input type="text" id="text-input" name="txtstock" class="form-control">
-                      </div>
-                    </div> --}}
                     <div class="col-md-12 ">
                       <div class="form-control-group" style="margin: 3mm">
                         <label for="file">Choose Image</label>
@@ -81,8 +73,7 @@
                       </div>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-primary pull-right">Save</button>
-                  <div class="clearfix"></div>
+                  <button type="submit" class="btn btn-primary pull-right" style="padding-inline: 15mm">Save</button>
               </form>
             </div>
           </div>

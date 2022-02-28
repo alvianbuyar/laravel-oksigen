@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data = addproduct::all();
+        $data = addproduct::paginate(20);
         return view('home.home', compact('data'));
     }
 }

@@ -37,11 +37,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-}
 
-class Users extends Model
-{
-    //
     public function purchaselogs()
     {
         return $this->hasMany('App\purchaselog', 'id_users', 'id');
