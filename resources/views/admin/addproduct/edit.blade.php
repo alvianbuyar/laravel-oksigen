@@ -61,12 +61,12 @@
                           </select>
                         </div>
                       </div>
-                    <div class="col-md-12">
+                    {{-- <div class="col-md-12">
                       <div class="form-group" style="margin: 3mm">
                         <label for="text-input" class=" form-control-label">Stock</label>
                         <input type="text" id="text-input" name="txtstock" value="{{$data->stock}}" class="form-control">
                       </div>
-                    </div>
+                    </div> --}}
                     <div class="col-md-12 ">
                       <div class="form-control-group" style="margin: 3mm">
                         <label for="file">Choose Image</label>

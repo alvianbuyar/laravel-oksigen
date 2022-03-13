@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\addproduct;
 use App\detail;
 use App\purchaselog;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
@@ -75,6 +76,65 @@ class PesanController extends Controller
         $purchase->update();
 
         alert()->success('Pesanan dimasukkan keranjang', 'Sukses');
+        return redirect('home');
+    }
+
+    public function checkout()
+    {
+        $purchase = purchaselog::where('id_users', Auth::user()->id)->where('purchase_status', 0)->first();
+        if (!empty($purchase)) {
+            $detail = detail::where('id_purchaselogs', $purchase->id)->get();
+            return view('home.pesan.checkout', compact('purchase', 'detail'));
+        }
+        return view('home.pesan.checkout');
+    }
+
+    public function delete($id)
+    {
+        $detail = detail::where('id', $id)->first();
+
+        $purchase = purchaselog::where('id', $detail->id_purchaselogs)->first();
+        $purchase->purchase_total = $purchase->purchase_total - $detail->total_detail;
+        $purchase->update();
+
+        $detail->delete();
+
+        alert()->success('Pesanan berhasil dihapus', 'Sukses');
+        return redirect('checkout');
+    }
+
+    public function confirm()
+    {
+        $user = User::where('id', Auth::user()->id)->first();
+
+        if (empty($user->address)) {
+            alert()->warning('Harap lengkapi identitas alamat terlebih dahulu', 'Peringatan');
+            return redirect('editprofile');
+        }
+
+        if (empty($user->phone_number)) {
+            alert()->warning('Harap lengkapi identitas nomor HP terlebih dahulu', 'Peringatan');
+            return redirect('editprofile');
+        }
+
+        if (empty($user->ktp_image)) {
+            alert()->warning('Harap lengkapi identitas terlebih dahulu', 'Peringatan');
+            return redirect('editprofile');
+        }
+
+        $purchase = purchaselog::where('id_users', Auth::user()->id)->where('purchase_status', 0)->first();
+        $detail_id = $purchase->id;
+        $purchase->purchase_status = 1;
+        $purchase->update();
+
+        $purchase_details = detail::where('id_purchaselogs', $detail_id)->get();
+        foreach ($purchase_details as $purchase_detail) {
+            $data = addproduct::where('id', $purchase_detail->id_addproducts)->first();
+            $data->stock = $data->stock - $purchase_detail->total_product;
+            $data->update();
+        }
+
+        alert()->success('Anda berhasil melakukan checkout', 'Sukses');
         return redirect('home');
     }
 }

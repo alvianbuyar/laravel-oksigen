@@ -31,7 +31,7 @@
       <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="100">
           <div class="container">
             <div class="navbar-translate">
-              <a href="{{ url('/') }}" class="navbar-brand" rel="tooltip" title="Designed by Creative Tim" data-placement="bottom" style="color: white">
+              <a href="{{ url('/') }}" class="navbar-brand" rel="tooltip" title="Kembali ke laman utama" data-placement="bottom" style="color: white">
                 <span>CV</span> Iswara
               </a>
               <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,12 +73,30 @@
                       </li>
                     @endif
                 @else
+                    <li>
+                      <?php
+                        $first_purchase = \App\purchaselog::where('id_users', Auth::user()->id)->where('purchase_status', 0)->first();
+                        if (!empty($first_purchase)) 
+                        {
+                          $notif = \App\detail::where('id_purchaselogs', $first_purchase->id)->count();
+                        }
+                      ?>
+                      <a href="{{ url('checkout') }}" class="nav-link">
+                        <i class="tim-icons icon-cart"></i>
+                        @if(!empty($notif))
+                        <span class="badge badge-danger">{{ $notif }}</span>
+                        @endif
+                      </a>
+                    </li>
                     <li class="dropdown nav-item">
                         <a id="navbarDropdown" class="dropdown-toggle nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
+                          <i class="tim-icons icon-single-02"></i>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ url('profile') }}">
+                             Profile
+                            </a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">

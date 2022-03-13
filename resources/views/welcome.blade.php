@@ -26,7 +26,7 @@
   <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="100">
     <div class="container">
       <div class="navbar-translate">
-        <a class="navbar-brand" rel="tooltip" title="Designed by Creative Tim" data-placement="bottom" target="_blank" style="color: white">
+        <a class="navbar-brand" rel="tooltip" title="Kembali ke laman utama" data-placement="bottom" target="_blank" style="color: white">
           <span>CV</span> Iswara
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">

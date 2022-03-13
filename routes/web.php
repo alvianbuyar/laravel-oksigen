@@ -25,7 +25,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('pesan/{id}', 'PesanController@index');
 Route::post('pesan/{id}', 'PesanController@pesan');
-// Route::resource('pesan/{id}', 'PesanController');
+Route::get('checkout', 'PesanController@checkout');
+Route::delete('checkout/{id}', 'PesanController@delete');
+
+Route::get('confirmation', 'PesanController@confirm');
+
+Route::get('profile', 'ProfileController@index');
+Route::get('editprofile', 'ProfileController@edit');
+Route::post('updateprofile', 'ProfileController@update');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', 'Admin\DashboardController@index');

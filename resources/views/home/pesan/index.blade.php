@@ -32,7 +32,7 @@
                                 <td>Jumlah Pesan</td>
                                 <td>:</td>
                                 <td>
-                                  <input type="text" name="total" class="form-control" required="">
+                                  <input type="text" name="total" class="form-control" required="" value="1">
                                 </td>
                             </tr>
                         </tbody>
