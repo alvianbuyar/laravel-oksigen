@@ -119,7 +119,6 @@ class AddProductController extends Controller
             'txtproduct_seriesnumber' => 'required',
             'txtproduct_name' => 'required',
             'txtid_categories' => 'required',
-            'txtstock' => 'required',
             'product_image' => 'mimes:jpeg,png,jpg,svg | required',
             'txtproduct_price' => 'required',
             'txttube_price' => 'required',
@@ -145,7 +144,7 @@ class AddProductController extends Controller
         $product->product_name = $request->get('txtproduct_name');
         $product->id_categories = $request->get('txtid_categories');
         $product->stock = $request->get('txtstock');
-        $product->product_image = $request->product_image;
+        $product->product_image = $imgName;
         $product->product_price = $request->get('txtproduct_price');
         $product->tube_price = $request->get('txttube_price');
 

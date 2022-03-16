@@ -31,7 +31,7 @@ class ProfileController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'ktp_image' => 'mimes:jpeg,png,jpg,svg | required',
+            'ktp_image' => 'mimes:jpeg,png,jpg,svg',
         ]);
 
         $user = User::where('id', Auth::user()->id)->first();
@@ -39,10 +39,10 @@ class ProfileController extends Controller
         $user->phone_number = $request->phone_number;
         $user->address = $request->address;
 
-        $imgName = $request->ktp_image->getClientOriginalName() . '-' . time()
+        $imgKTPName = $request->ktp_image->getClientOriginalName() . '-' . time()
             . '-' . $request->ktp_image->extension();
 
-        $request->ktp_image->move(public_path() . '/ktpImage', $imgName);
+        $request->ktp_image->move(public_path() . '/ktpImage', $imgKTPName);
 
         if ($request->ktp_image != '') {
             $path = public_path() . '/ktpImage/';
@@ -53,7 +53,7 @@ class ProfileController extends Controller
             }
         }
 
-        $user->ktp_image = $request->ktp_image;
+        $user->ktp_image = $imgKTPName;
         $user->update();
 
         alert()->success('Anda berhasil memperbarui profile', 'Sukses');

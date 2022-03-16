@@ -41,6 +41,7 @@ class PesanController extends Controller
             $purchase = new purchaselog();
             $purchase->id_users = Auth::user()->id;
             $purchase->purchase_status = 0;
+            $purchase->loan_status = 0;
             $purchase->purchase_date = $date;
             $purchase->purchase_total = 0;
             $purchase->save();

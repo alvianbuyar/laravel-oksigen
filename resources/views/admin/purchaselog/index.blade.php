@@ -26,6 +26,9 @@
                       Loan
                     </th>
                     <th>
+                      status
+                    </th>
+                    <th>
                       Purchase Date
                     </th>
                     <th>
@@ -45,9 +48,17 @@
                         <td>{{$row->users->name}}</td>
                         <td>{{$row->users->phone_number}}</td>
                         {{-- <td>{{$row->users->ktp_image}}</td> --}}
-                        <td>
-                          <img src="{{ asset('public/ktpImage/'. ($row->users->ktp_image)) }}" height="160px" width="235px">
-                        </td>
+
+                        @if(!empty($row->users->ktp_image))
+                          <td>
+                            <img src="{{ asset('public/ktpImage/'. $row->users->ktp_image) }}" height="160px" width="235px">
+                          </td>
+                        @else
+                          <td>
+                          </td>
+                        @endif
+
+                        <td>{{$row->loan_status}}</td>
                         <td>{{$row->purchase_status}}</td>
                         <td>{{$row->purchase_date}}</td>
                         <td>{{$row->purchase_total}}</td>

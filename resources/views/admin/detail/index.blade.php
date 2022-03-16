@@ -32,6 +32,9 @@
                       Loan
                     </th>
                     <th>
+                      Status
+                    </th>
+                    <th>
                       Purchase Date
                     </th>
                     <th>
@@ -50,6 +53,7 @@
                       <td>{{$row->purchaselogs->users->name}}</td>
                       <td>{{$row->purchaselogs->users->address}}</td>
                       <td>{{$row->purchaselogs->users->phone_number}}</td>
+                      <td>{{$row->purchaselogs->loan_status}}</td>
                       <td>{{$row->purchaselogs->purchase_status}}</td>
                       <td>{{$row->purchaselogs->purchase_date}}</td>
                       <td>{{$row->status}}</td>
