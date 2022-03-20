@@ -31,6 +31,7 @@ class PesanController extends Controller
 
         //cek validasi totals
         if ($request->total > $data->stock) {
+            alert()->error('Maaf stock habis silahkan memesan item yang lain', 'Stock Habis');
             return redirect('pesan/' . $id);
         }
 
@@ -41,7 +42,6 @@ class PesanController extends Controller
             $purchase = new purchaselog();
             $purchase->id_users = Auth::user()->id;
             $purchase->purchase_status = 0;
-            $purchase->loan_status = 0;
             $purchase->purchase_date = $date;
             $purchase->purchase_total = 0;
             $purchase->save();
@@ -57,24 +57,42 @@ class PesanController extends Controller
             $detail = new detail();
             $detail->id_purchaselogs = $new_purchase->id;
             $detail->id_addproducts = $data->id;
-            $detail->status = 0;
+            $detail->tube_status = 0;
             $detail->total_product = $request->total;
-            $detail->total_detail = ($data->product_price + $data->tube_price) * $request->total;
+            $detail->loan_status = $request->loan;
+            if ($request->loan != 1) {
+                $detail->total_detail = ($data->product_price + $data->tube_price) * $request->total;
+            } else {
+                $detail->total_detail = $data->product_price * $request->total;
+            }
             $detail->save();
+
+            $data->trigger = $data->trigger - $request->total;
+            $data->update();
         } else {
             $detail = detail::where('id_purchaselogs', $new_purchase->id)->where('id_addproducts', $data->id)->first();
             $detail->total_product = $detail->total_product + $request->total;
 
             //harga sekarang
-            $new_price = ($data->product_price + $data->tube_price) * $request->total;
+            if ($request->loan != 1) {
+                $new_price = ($data->product_price + $data->tube_price) * $request->total;
+            } else {
+                $new_price = $data->product_price * $request->total;
+            }
             $detail->total_detail = $detail->total_detail + $new_price;
             $detail->update();
         }
 
-        //jumlah total
-        $purchase = purchaselog::where('id_users', Auth::user()->id)->where('purchase_status', 0)->first();
-        $purchase->purchase_total = $purchase->purchase_total + ($data->product_price + $data->tube_price) * $request->total;
-        $purchase->update();
+        //jumlah total jika pinjam atau tidak
+        if ($request->loan != 1) {
+            $purchase = purchaselog::where('id_users', Auth::user()->id)->where('purchase_status', 0)->first();
+            $purchase->purchase_total = $purchase->purchase_total + ($data->product_price + $data->tube_price) * $request->total;
+            $purchase->update();
+        } else {
+            $purchase = purchaselog::where('id_users', Auth::user()->id)->where('purchase_status', 0)->first();
+            $purchase->purchase_total = ($purchase->purchase_total + $data->product_price) * $request->total;
+            $purchase->update();
+        }
 
         alert()->success('Pesanan dimasukkan keranjang', 'Sukses');
         return redirect('home');
@@ -97,6 +115,10 @@ class PesanController extends Controller
         $purchase = purchaselog::where('id', $detail->id_purchaselogs)->first();
         $purchase->purchase_total = $purchase->purchase_total - $detail->total_detail;
         $purchase->update();
+
+        $data = addproduct::where('id', $detail->id_addproducts)->first();
+        $data->trigger = 1;
+        $data->update();
 
         $detail->delete();
 
@@ -136,6 +158,6 @@ class PesanController extends Controller
         }
 
         alert()->success('Anda berhasil melakukan checkout', 'Sukses');
-        return redirect('home');
+        return redirect('history/' . $detail_id);
     }
 }

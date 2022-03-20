@@ -12,10 +12,10 @@ class addproduct extends Model
         'product_name',
         'id_categories',
         'stock',
-        // 'description',
         'product_image',
         'product_price',
         'tube_price',
+        'trigger',
     ];
 
     public function productcategory()

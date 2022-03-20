@@ -18,10 +18,10 @@ class CreatePurchaselogsTable extends Migration
             $table->unsignedBigInteger('id_users');
             $table->foreign('id_users')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('purchase_status');
-            $table->integer('loan_status');
+            // $table->integer('loan_status');
             $table->date('purchase_date');
             $table->integer('purchase_total');
-            // $table->integer('purchase_price');
+            $table->string('payment_image')->nullable();
             $table->timestamps();
         });
     }

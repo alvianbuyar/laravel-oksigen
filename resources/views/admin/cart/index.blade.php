@@ -7,7 +7,7 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header card-header-primary d-flex justify-content-between align-items-center">
-              <h4 class="card-title" style="margin-left: 5mm">Purchase Log Table</h4>
+              <h4 class="card-title" style="margin-left: 5mm">Cart Table</h4>
             </div>
             <div class="card-body">
               <div class="table-responsive table-striped table-bordered">
@@ -21,9 +21,6 @@
                     </th>
                     <th>
                       KTP
-                    </th>
-                    <th>
-                      Payment
                     </th>
                     <th>
                       Purchase Date
@@ -49,15 +46,6 @@
                         @if(!empty($row->users->ktp_image))
                           <td>
                             <img src="{{ asset('public/ktpImage/'. $row->users->ktp_image) }}" height="160px" width="235px">
-                          </td>
-                        @else
-                          <td>
-                          </td>
-                        @endif
-
-                        @if(!empty($row->payment_image))
-                          <td>
-                            <img src="{{ asset('public/paymentImage/'. $row->payment_image) }}" height="160px" width="235px">
                           </td>
                         @else
                           <td>

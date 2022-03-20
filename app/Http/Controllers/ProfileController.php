@@ -57,6 +57,6 @@ class ProfileController extends Controller
         $user->update();
 
         alert()->success('Anda berhasil memperbarui profile', 'Sukses');
-        return redirect('/profile');
+        return redirect('home');
     }
 }

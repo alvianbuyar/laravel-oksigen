@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\purchaselog;
 use Illuminate\Http\Request;
 
-class PurchaseLogController extends Controller
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,9 @@ class PurchaseLogController extends Controller
      */
     public function index()
     {
-        //
-        $pagename = 'Puchase Log';
-        // $data = purchaselog::all();
-        $data = purchaselog::where('purchase_status', '!=', 0)->get();
-        return view('admin.purchaselog.index', compact('data', 'pagename'));
+        $pagename = 'Cart';
+        $data = purchaselog::where('purchase_status', '=', 0)->get();
+        return view('admin.cart.index', compact('data', 'pagename'));
     }
 
     /**

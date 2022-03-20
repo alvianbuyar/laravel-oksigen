@@ -35,6 +35,17 @@
                                   <input type="text" name="total" class="form-control" required="" value="1">
                                 </td>
                             </tr>
+                            <tr>
+                              <td>Pinjam Tabung</td>
+                              <td>:</td>
+                              <td>
+                                  <select name="loan" class="form-control" style="background: #171941">
+                                    <option value="0">Tidak</option>
+                                    <option value="1">Pinjam</option>
+                                  </select>
+                                  {{-- <input type="text" name="loan" class="form-control" required="" value="1"> --}}
+                              </td>
+                            </tr>
                         </tbody>
                     </table>
                     <a href="{{ route('home') }}" class="btn btn-warning" style="margin-right: 3mm">Kembali</a>

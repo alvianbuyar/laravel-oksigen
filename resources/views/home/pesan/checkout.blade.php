@@ -42,18 +42,21 @@
                 <tr>
                     <td>{{++$i}}</td>
                     <td>{{$row->addproducts->product_name}}</td>
-                    <td>{{$row->addproducts->product_price}}</td>
-                    <td>{{$row->addproducts->tube_price}}</td>
-                    {{-- <td>{{$row->purchaselogs->purchase_status}}</td> --}}
-                    <td>
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input class="form-check-input" type="checkbox">
-                          <span class="form-check-sign"></span>
-                        </label>
-                      </div>
-                    </td>
-                    <td>{{$row->total_detail}}</td>
+                    <td>Rp. {{number_format($row->addproducts->product_price)}}</td>
+
+                    @if($row->loan_status!=1)
+                      <td>Rp. {{number_format($row->addproducts->tube_price)}}</td>
+                    @else
+                      <td>-</td>
+                    @endif
+
+                    @if($row->loan_status!=0)
+                      <td>Pinjam</td>
+                    @else
+                      <td>Tidak</td>
+                    @endif
+
+                    <td>Rp. {{number_format($row->total_detail)}}</td>
                     <td>
                         <form action="{{ url('checkout') }}/{{ $row->id }}" method="post">
                             @csrf
@@ -67,7 +70,8 @@
                 @endforeach
                 <tr>
                   <td colspan="5"> <strong>Total Harga : </strong> </td>
-                  <td> <strong> Rp. {{ $purchase->purchase_total }} </strong> </td>
+                  <td> <strong> Rp. {{number_format($purchase->purchase_total)}} </strong> </td>
+                  <td></td>
                 </tr>
               </tbody>
             </table>

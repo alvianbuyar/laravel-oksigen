@@ -36,6 +36,9 @@
                       Tube Price
                     </th>
                     <th>
+                      Status
+                    </th>
+                    <th>
                       Edit
                     </th>
                     <th>
@@ -51,8 +54,19 @@
                         <td>{{$row->productcategory->categories_name}}</td>
                         {{-- <td>{{$row->stock}}</td> --}}
                         <td>{{$row->product_image}}</td>
-                        <td>{{$row->product_price}}</td>
-                        <td>{{$row->tube_price}}</td>
+                        <td>{{number_format($row->product_price)}}</td>
+                        <td>{{number_format($row->tube_price)}}</td>
+
+                        @if($row->trigger!=1)
+                          <td>Keranjang</td>
+                        @else
+                          @if($row->stock!=0)
+                            <td>Ada</td>
+                          @else
+                            <td>Habis</td>
+                          @endif
+                        @endif
+
                         <td><a href="{{route('addproduct.edit', $row->id)}}" class='btn btn-success'>Edit</a></td>
                         <td>
                             <form action="{{route('addproduct.destroy', $row->id)}}" method="post">

@@ -28,8 +28,6 @@
               <form action="{{route('addproduct.update', $data->id)}}" method="post" enctype="multipart/form-data" class="form-horizontal">
               @method('PATCH')
               @csrf
-
-              <form>
                 <div class="row">
                     <div class="col-md-12">
                       <div class="form-group" style="margin: 3mm">

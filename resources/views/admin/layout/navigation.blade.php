@@ -34,6 +34,12 @@
           </a>
         </li>
         <li class="nav-item ">
+          <a class="nav-link" href="{{ url('/admin/cart') }}">
+            <i class="material-icons">shopping_cart</i>
+            <p>Keranjang</p>
+          </a>
+        </li>
+        <li class="nav-item ">
           <a class="nav-link" href="{{ url('/admin/purchaselog') }}">
             <i class="material-icons">account_balance_wallet</i>
             <p>Pemesan</p>

@@ -8,7 +8,7 @@ class detail extends Model
 {
     //
     protected $fillable = [
-        'status',
+        'tube_status',
     ];
 
     public function addproducts()

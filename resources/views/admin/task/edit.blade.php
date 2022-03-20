@@ -28,8 +28,6 @@
               <form action="{{route('task.update', $data->id)}}" method="post" enctype="multipart/form-data" class="form-horizontal">
                 @method('PATCH')
                 @csrf
-
-              <form>
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group" style="margin: 10mm">
@@ -41,6 +39,7 @@
                 <button type="submit" class="btn btn-primary pull-right">Save</button>
                 <div class="clearfix"></div>
               </form>
+              
             </div>
           </div>
         </div>

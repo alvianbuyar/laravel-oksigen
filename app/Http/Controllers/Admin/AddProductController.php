@@ -73,10 +73,11 @@ class AddProductController extends Controller
             'product_image' => $imgName,
             'product_price' => $request->get('txtproduct_price'),
             'tube_price' => $request->get('txttube_price'),
+            'trigger' => 1,
         ]);
 
         $product_data->save();
-        return redirect('admin\addproduct')->with('Success', 'data product saved successfully');
+        return redirect('admin\addproduct')->with('Success', 'data product saved successfully', compact('imgName'));
     }
 
     /**

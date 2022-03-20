@@ -34,11 +34,16 @@ Route::get('profile', 'ProfileController@index');
 Route::get('editprofile', 'ProfileController@edit');
 Route::post('updateprofile', 'ProfileController@update');
 
+Route::get('history', 'HistoryController@index');
+Route::get('history/{id}', 'HistoryController@detail');
+Route::post('history/{id}', 'HistoryController@upload');
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', 'Admin\DashboardController@index');
     Route::resource('/productcategories', 'Admin\ProductCategoriesController');
     Route::resource('/addproduct', 'Admin\AddProductController');
     Route::resource('/task', 'Admin\TaskController');
+    Route::resource('/cart', 'Admin\CartController');
     Route::resource('/purchaselog', 'Admin\PurchaseLogController');
     Route::resource('/loanlog', 'Admin\LoanLogController');
     Route::resource('/detail', 'Admin\DetailController');

@@ -32,40 +32,68 @@
                       Loan
                     </th>
                     <th>
-                      Status
-                    </th>
-                    <th>
                       Purchase Date
                     </th>
                     <th>
                       Tube Status
                     </th>
                     <th>
-                      Delete
+                      Edit Tube Status
                     </th>
+                    {{-- <th>
+                      Delete
+                    </th> --}}
                   </thead>
+
                   <tbody style="background-color: #202940">
-                    
-                    @foreach($data as $i=>$row)
-                    <tr>
-                      <td>{{$row->addproducts->product_seriesnumber}}</td>
-                      <td>{{$row->addproducts->product_name}}</td>
-                      <td>{{$row->purchaselogs->users->name}}</td>
-                      <td>{{$row->purchaselogs->users->address}}</td>
-                      <td>{{$row->purchaselogs->users->phone_number}}</td>
-                      <td>{{$row->purchaselogs->loan_status}}</td>
-                      <td>{{$row->purchaselogs->purchase_status}}</td>
-                      <td>{{$row->purchaselogs->purchase_date}}</td>
-                      <td>{{$row->status}}</td>
-                      <td>
-                        <form action="{{route('detail.destroy', $row->id)}}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger" type="submit">Delete</button>
-                        </form>
-                      </td>
-                    </tr>
-                    @endforeach
+
+                      @foreach($data as $i=>$row)
+                        @if($row->purchaselogs->purchase_status !=0)
+                          <tr>
+                            <td>{{$row->addproducts->product_seriesnumber}}</td>
+                            <td>{{$row->addproducts->product_name}}</td>
+                            <td>{{$row->purchaselogs->users->name}}</td>
+                            <td>{{$row->purchaselogs->users->address}}</td>
+                            <td>{{$row->purchaselogs->users->phone_number}}</td>
+
+                            @if($row->loan_status == 0)
+                              <td>Tidak</td>
+                            @else
+                              <td>Pinjam</td>
+                            @endif
+
+                            <td>{{$row->purchaselogs->purchase_date}}</td>
+
+                            @if($row->loan_status == 0)
+                              <td>Dibeli</td>
+                            @else
+                              @if($row->tube_status == 0)
+                                <td>Belum kembali</td>
+                              @else
+                                <td>Sudah kembali</td>
+                              @endif
+                            @endif
+
+                            @if($row->loan_status == 0)
+                              <td><a href="#" class='btn btn-warning'>Edit</a></td>
+                            @else
+                              @if($row->tube_status == 0)
+                                <td><a href="{{route('detail.edit', $row->id)}}" class='btn btn-success'>Edit</a></td>
+                              @else
+                                <td><a href="{{route('detail.edit', $row->id)}}" class='btn btn-warning'>Edit</a></td>
+                              @endif
+                            @endif
+
+                            {{-- <td>
+                              <form action="{{route('detail.destroy', $row->id)}}" method="post">
+                                  @csrf
+                                  @method('DELETE')
+                                  <button class="btn btn-danger" type="submit">Delete</button>
+                              </form>
+                            </td> --}}
+                          </tr>
+                        @endif  
+                      @endforeach
 
                   </tbody>
                 </table>

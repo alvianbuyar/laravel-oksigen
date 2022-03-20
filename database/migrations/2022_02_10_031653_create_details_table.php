@@ -19,8 +19,9 @@ class CreateDetailsTable extends Migration
             $table->unsignedBigInteger('id_addproducts');
             $table->foreign('id_purchaselogs')->references('id')->on('purchaselogs')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('id_addproducts')->references('id')->on('addproducts')->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('status');
+            $table->integer('tube_status');
             $table->integer('total_product');
+            $table->integer('loan_status');
             $table->integer('total_detail');
             $table->timestamps();
         });

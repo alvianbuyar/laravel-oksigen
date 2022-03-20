@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\detail;
 use App\Http\Controllers\Controller;
+use App\purchaselog;
 use Illuminate\Http\Request;
 
 class DetailController extends Controller
@@ -13,7 +14,7 @@ class DetailController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
         $pagename = 'Detail';
@@ -62,6 +63,9 @@ class DetailController extends Controller
     public function edit($id)
     {
         //
+        $pagename = 'Edit Detail Loan';
+        $data = detail::find($id);
+        return view('admin.detail.edit', compact('data', 'pagename'));
     }
 
     /**
@@ -74,6 +78,16 @@ class DetailController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'txttube_status' => 'required',
+        ]);
+
+        $data = detail::find($id);
+
+        $data->tube_status = $request->get('txttube_status');
+        $data->save();
+
+        return redirect('admin\detail')->with('Success', 'Tube status updated successfully');
     }
 
     /**
