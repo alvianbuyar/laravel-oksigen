@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\detail;
+use App\addproduct;
 use App\purchaselog;
 use Illuminate\Http\Request;
 
@@ -13,10 +15,19 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware(['role:Admin']);
+    }
+
     public function index()
     {
-        $pagename = 'Cart';
-        $data = purchaselog::where('purchase_status', '=', 0)->get();
+        // $pagename = 'Cart';
+        // $data = purchaselog::where('purchase_status', '=', 0)->get();
+        // return view('admin.cart.index', compact('data', 'pagename'));
+
+        $pagename = 'cart';
+        $data = detail::all();
         return view('admin.cart.index', compact('data', 'pagename'));
     }
 
@@ -84,9 +95,18 @@ class CartController extends Controller
     public function destroy($id)
     {
         //
-        $purchase = purchaselog::find($id);
+        $detail = detail::where('id', $id)->first();
 
-        $purchase->delete();
-        return redirect('admin\purchaselog')->with('Success', 'log data deleted successfully');
+        $purchase = purchaselog::where('id', $detail->id_purchaselogs)->first();
+        $purchase->purchase_total = $purchase->purchase_total - $detail->total_detail;
+        $purchase->update();
+
+        $data = addproduct::where('id', $detail->id_addproducts)->first();
+        $data->trigger = 1;
+        $data->update();
+
+        $detail->delete();
+
+        return redirect('admin\cart')->with('Success', 'log data deleted successfully');
     }
 }

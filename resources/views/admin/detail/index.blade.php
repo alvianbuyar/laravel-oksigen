@@ -75,22 +75,14 @@
                             @endif
 
                             @if($row->loan_status == 0)
-                              <td><a href="#" class='btn btn-warning'>Edit</a></td>
+                              <td><a href="#" class='btn btn-danger'>Edit</a></td>
                             @else
                               @if($row->tube_status == 0)
                                 <td><a href="{{route('detail.edit', $row->id)}}" class='btn btn-success'>Edit</a></td>
                               @else
-                                <td><a href="{{route('detail.edit', $row->id)}}" class='btn btn-warning'>Edit</a></td>
+                                <td><a href="{{route('detail.edit', $row->id)}}" class='btn btn-danger'>Edit</a></td>
                               @endif
                             @endif
-
-                            {{-- <td>
-                              <form action="{{route('detail.destroy', $row->id)}}" method="post">
-                                  @csrf
-                                  @method('DELETE')
-                                  <button class="btn btn-danger" type="submit">Delete</button>
-                              </form>
-                            </td> --}}
                           </tr>
                         @endif  
                       @endforeach

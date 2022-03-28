@@ -29,7 +29,7 @@
                 @csrf
                 <div class="row">
                     <div class="col-md-12">
-                      <div class="form-group" style="margin: 3mm">
+                      <div class="form-group" style="margin: 3mm; margin-top: 10mm">
                         <label for="text-input" class=" form-control-label ">Product Series Number</label>
                         <input type="text" id="text-input" name="txtproduct_seriesnumber" class="form-control">
                       </div>
@@ -40,20 +40,19 @@
                         <input type="text" id="text-input" name="txtproduct_name" class="form-control">
                       </div>
                     </div>
-                      <div class="col-md-5">
-                        <div class="form-group" style="margin: 3mm">
-                          <label for="select" class=" form-control-label">Product Categories</label>
-                          <select name="txtid_categories" id="select" class="form-control">
+                    <div class="col-md-5">
+                      <div class="form-group" style="margin: 3mm">
+                        <label for="select" class=" form-control-label">Product Categories</label>
+                        <select name="txtid_categories" id="select" class="form-control" style="background: #202940">
 
-                            @foreach($categories_data as $productcategories)
-                            <option value={{$productcategories->id}} class="alert-primary">
-                            {{$productcategories->categories_name}}</option>
+                          @foreach($categories_data as $productcategories)
+                          <option value={{$productcategories->id}} class="alert-primary">
+                          {{$productcategories->categories_name}}</option>
+                          @endforeach
 
-                            @endforeach
-
-                          </select>
-                        </div>
+                        </select>
                       </div>
+                    </div>
                     <div class="col-md-12 ">
                       <div class="form-control-group" style="margin: 3mm">
                         <label for="file">Choose Image</label>

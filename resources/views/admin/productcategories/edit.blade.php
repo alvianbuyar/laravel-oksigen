@@ -30,7 +30,7 @@
                 @csrf
                 <div class="row">
                   <div class="col-md-12">
-                    <div class="form-group" style="margin: 10mm">
+                    <div class="form-group" style="margin: 3mm; margin-top: 10mm">
                         <label for="text-input" class=" form-control-label">Categories Name</label>
                         <input type="text" id="text-input" name="txtcategories_name" value="{{$data->categories_name}}" class="form-control">
                     </div>

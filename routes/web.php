@@ -23,6 +23,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('search', 'HomeController@search');
+
 Route::get('pesan/{id}', 'PesanController@index');
 Route::post('pesan/{id}', 'PesanController@pesan');
 Route::get('checkout', 'PesanController@checkout');
@@ -42,6 +44,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', 'Admin\DashboardController@index');
     Route::resource('/productcategories', 'Admin\ProductCategoriesController');
     Route::resource('/addproduct', 'Admin\AddProductController');
+    Route::resource('/users', 'Admin\UserController');
+    Route::resource('/roles', 'Admin\RoleController');
     Route::resource('/task', 'Admin\TaskController');
     Route::resource('/cart', 'Admin\CartController');
     Route::resource('/purchaselog', 'Admin\PurchaseLogController');

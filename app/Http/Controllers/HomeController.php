@@ -24,7 +24,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data = addproduct::paginate(20);
+        $data = addproduct::paginate(8);
         return view('home.home', compact('data'));
+    }
+
+    public function search()
+    {
+        $searchText = $_GET['query'];
+        $data = addproduct::where('product_name', 'LIKE', '%' . $searchText . '%')->get();
+
+        return view('home.search', compact('data', 'searchText'));
     }
 }

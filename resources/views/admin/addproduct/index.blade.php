@@ -57,14 +57,10 @@
                         <td>{{number_format($row->product_price)}}</td>
                         <td>{{number_format($row->tube_price)}}</td>
 
-                        @if($row->trigger!=1)
-                          <td>Keranjang</td>
+                        @if($row->stock!=0)
+                          <td>Ada</td>
                         @else
-                          @if($row->stock!=0)
-                            <td>Ada</td>
-                          @else
-                            <td>Habis</td>
-                          @endif
+                          <td>Dipesan</td>
                         @endif
 
                         <td><a href="{{route('addproduct.edit', $row->id)}}" class='btn btn-success'>Edit</a></td>

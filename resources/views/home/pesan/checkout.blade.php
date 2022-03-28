@@ -75,7 +75,6 @@
                 </tr>
               </tbody>
             </table>
-            {{-- <a href="#" class="btn btn-primary btn-block">Checkout</a> --}}
             <a href="{{ url('confirmation') }}" class="btn btn-primary btn-block">Checkout</a>
 
             @else

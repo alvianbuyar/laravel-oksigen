@@ -14,6 +14,9 @@
                 <table id="datatables" class="table">
                   <thead class=" text-primary" style="background-color: #202940">
                     <th>
+                      Number
+                    </th>
+                    <th>
                       Name
                     </th>
                     <th>
@@ -35,34 +38,37 @@
                       Delete
                     </th>
                   </thead>
-                  <tbody style="background-color: #202940">
+                  <tbody style="background-color: hsl(223, 33%, 19%)">
                     
                     @foreach($data as $i=>$row)
-                    <tr>
-                        <td>{{$row->users->name}}</td>
-                        <td>{{$row->users->phone_number}}</td>
-                        {{-- <td>{{$row->users->ktp_image}}</td> --}}
+                    @if($row->purchaselogs->purchase_status == 0)
+                      <tr>
+                          <td>{{$row->addproducts->product_seriesnumber}}</td>
+                          <td>{{$row->purchaselogs->users->name}}</td>
+                          <td>{{$row->purchaselogs->users->phone_number}}</td>
+                          {{-- <td>{{$row->users->ktp_image}}</td> --}}
 
-                        @if(!empty($row->users->ktp_image))
-                          <td>
-                            <img src="{{ asset('public/ktpImage/'. $row->users->ktp_image) }}" height="160px" width="235px">
-                          </td>
-                        @else
-                          <td>
-                          </td>
-                        @endif
+                          @if(!empty($row->purchaselogs->users->ktp_image))
+                            <td>
+                              <img src="{{ asset('public/ktpImage/'. $row->purchaselogs->users->ktp_image) }}" height="160px" width="235px">
+                            </td>
+                          @else
+                            <td>
+                            </td>
+                          @endif
 
-                        <td>{{$row->purchase_date}}</td>
-                        <td>{{number_format($row->purchase_total)}}</td>
-                        {{-- <td>{{$row->purchase_price}}</td> --}}
-                        <td>
-                            <form action="{{route('purchaselog.destroy', $row->id)}}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger" type="submit">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
+                          <td>{{$row->purchaselogs->purchase_date}}</td>
+                          <td>{{number_format($row->purchase_total)}}</td>
+                          {{-- <td>{{$row->purchase_price}}</td> --}}
+                          <td>
+                              <form action="{{route('cart.destroy', $row->id)}}" method="post">
+                                  @csrf
+                                  @method('DELETE')
+                                  <button class="btn btn-danger" type="submit">Delete</button>
+                              </form>
+                          </td>
+                      </tr>
+                    @endif
                     @endforeach
 
                   </tbody>

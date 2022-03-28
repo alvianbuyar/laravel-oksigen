@@ -66,7 +66,7 @@
                       </div>
                     </div> --}}
                     <div class="col-md-12 ">
-                      <div class="form-control-group" style="margin: 3mm">
+                      <div class="form-control-group" style="margin: 3mm; margin-top: 10mm">
                         <label for="file">Choose Image</label>
                         <input type="file" name="product_image" value="{{ $data->product_image }}" class="form-control">
                       </div>

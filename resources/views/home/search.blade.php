@@ -1,42 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="wrapper">
-  <div class="page-header header-filter">
-    <div class="squares square1"></div>
-    <div class="squares square2"></div>
-    <div class="squares square3"></div>
-    <div class="squares square4"></div>
-    <div class="squares square5"></div>
-    <div class="squares square7"></div>
-    <div class="main">
-      <div class="section section-basic" id="basic-elements">
-        <div class="container" style="margin-top: 45mm">
-          <h1 class="title" style="font-size: 12mm; line-height: 1.1">Temukan barang <br>Yang anda inginkan <br> Dengan cepat dan mudah</h1>
-          <form action="{{ url('search') }}" type="get">
-            <div class="row">
-              <div class="col-sm-6 col-lg-5">
-                <div class="input-group" style="margin-top: 5mm">
-                  <input type="text" name="query" class="form-control" placeholder="Search Something?" style="padding: 7mm 6mm 7mm 4mm; font-size:4mm">
-                  <div class="input-group-append">
-                    <span class="input-group-text">
-                      <div class="text-center">
-                        <button class="btn btn-primary" style="margin: -2mm; padding: 3mm 6mm 3mm 6mm">
-                          Search
-                          <i class="tim-icons icon-zoom-split" style="margin-left: 1mm"></i>
-                        </button>
-                      </div>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="section section-nucleo-icons" style="margin-top: -2cm">
+
+<div class="section section-nucleo-icons" style="margin-top: 8mm">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 col-md-12">

@@ -12,6 +12,6 @@
 <!-- CSS Files -->
 <link rel="stylesheet" href="{{ asset('public/assets/css/material-dashboard.css') }}"/>
 <!-- CSS Just for demo purpose, don't include it in your project -->
-<link rel="stylesheet" href="{{ asset('public/assets/demo/demo.css') }}"/>
+{{-- <link rel="stylesheet" href="{{ asset('public/assets/demo/demo.css') }}"/> --}}
 {{-- dataTable --}}
 <link rel="stylesheet" href="{{ asset('public/assets/dataTables/datatables.min.css') }}"/>

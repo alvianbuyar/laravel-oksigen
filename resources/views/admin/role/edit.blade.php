@@ -7,7 +7,7 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header card-header-primary">
-              <h4 class="card-title">Edit Tube Status</h4>
+              <h4 class="card-title">Edit Role</h4>
             </div>
             <div class="card-body">
 
@@ -25,16 +25,27 @@
 
               @endif
 
-              <form action="{{route('detail.update', $data->id)}}" method="post" enctype="multipart/form-data" class="form-horizontal">
+              <form action="{{route('roles.update', $role->id)}}" method="post" enctype="multipart/form-data" class="form-horizontal">
                 @method('PATCH')
                 @csrf
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group" style="margin: 3mm; margin-top: 10mm">
-                      <label for="text-input" class=" form-control-label">Tube Status</label>
-                      <select name="txttube_status" class="form-control" style="background: #202940">
-                        <option value="0">Tabung Belum Kembali</option>
-                        <option value="1">Tabung Sudah Kembali</option>
+                        <label for="text-input" class=" form-control-label">Role Name</label>
+                        <input type="text" id="text-input" name="txtnama_role" value="{{$role->name}}" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group" style="margin: 3mm">
+                      <label for="select" class=" form-control-label">Permission</label>
+                      <select name="optionid_permission[]" id="select" class="form-control" style="background: #202940">
+  
+                        @foreach($allPermission as $permission)
+                          <option value={{$permission->id}}>
+                              {{$permission -> name}}
+                          </option>
+                        @endforeach
+                        
                       </select>
                     </div>
                   </div>
