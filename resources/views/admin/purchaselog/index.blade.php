@@ -26,14 +26,11 @@
                       Payment
                     </th>
                     <th>
-                      Purchase Date
-                    </th>
-                    <th>
                       Total
                     </th>
-                    {{-- <th>
-                      Price
-                    </th> --}}
+                    <th>
+                      Purchase Date
+                    </th>
                     <th>
                       Delete
                     </th>
@@ -64,8 +61,8 @@
                           </td>
                         @endif
 
-                        <td>{{$row->purchase_date}}</td>
                         <td>{{number_format($row->purchase_total)}}</td>
+                        <td>{{$row->purchase_date}}</td>
                         {{-- <td>{{$row->purchase_price}}</td> --}}
                         <td>
                             <form action="{{route('purchaselog.destroy', $row->id)}}" method="post">

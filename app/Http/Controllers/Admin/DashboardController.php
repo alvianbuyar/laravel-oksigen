@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\detail;
 use App\Http\Controllers\Controller;
 use App\purchaselog;
+use App\task;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -17,7 +19,8 @@ class DashboardController extends Controller
     public function index()
     {
         $pagename = 'Dashboard';
-
-        return view('admin.dashboard', compact('pagename'));
+        $loan = detail::all();
+        $task = task::all();
+        return view('admin.dashboard', compact('pagename', 'loan', 'task'));
     }
 }

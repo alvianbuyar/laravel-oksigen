@@ -148,7 +148,7 @@ class AddProductController extends Controller
         $product->product_seriesnumber = $request->get('txtproduct_seriesnumber');
         $product->product_name = $request->get('txtproduct_name');
         $product->id_categories = $request->get('txtid_categories');
-        $product->stock = $request->get('txtstock');
+        // $product->stock = $request->get('txtstock');
         $product->product_image = $imgName;
         $product->product_price = $request->get('txtproduct_price');
         $product->tube_price = $request->get('txttube_price');

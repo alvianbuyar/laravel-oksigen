@@ -47,7 +47,7 @@
         </div>
       </div>
     </div>
-    <div class="row justify-content-center" style="margin: 2cm">
+    <div class="row d-flex justify-content-center" style="margin: 2cm">
 
       @foreach($data as $i=>$row)
         @if($row->trigger!=0)
@@ -65,7 +65,9 @@
           </div>
         @endif
       @endforeach
-
+      <div style="margin-inline: 44%">
+        {{ $data->links() }}
+      </div>
     </div>
   </div>
   <footer class="footer">
