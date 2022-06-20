@@ -7,7 +7,7 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header card-header-primary d-flex justify-content-between align-items-center">
-              <h4 class="card-title" style="margin-left: 5mm">Product Data Table</h4>
+              <h4 class="card-title" style="margin-left: 5mm">Tabel Data Produk</h4>
               <a href="{{route('addproduct.create')}}" class="btn btn-success btn-round">Add</a>
             </div>
             <div class="card-body">
@@ -15,25 +15,25 @@
                 <table id="datatables" class="table">
                   <thead class="text-primary" style="background-color: #202940">
                     <th>
-                      Number
+                      Series
                     </th>
                     <th>
-                      Product
+                      Produk
                     </th>
                     <th>
-                      Categories
+                      Kategori
                     </th>
                     {{-- <th>
                       Stock
                     </th> --}}
                     <th>
-                      Image
+                      Gambar
                     </th>
                     <th>
-                      Product Price
+                      Harga Produk
                     </th>
                     <th>
-                      Tube Price
+                      Harga Tabung
                     </th>
                     <th>
                       Status

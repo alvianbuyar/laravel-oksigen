@@ -7,7 +7,7 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header card-header-primary">
-              <h4 class="card-title">Edit Kategori</h4>
+              <h4 class="card-title">Edit Pembayaran</h4>
             </div>
             <div class="card-body">
 
@@ -25,19 +25,21 @@
 
               @endif
 
-              <form action="{{route('productcategories.update', $data->id)}}" method="post" enctype="multipart/form-data" class="form-horizontal">
+              <form action="{{route('purchaselog.update', $data->id)}}" method="post" enctype="multipart/form-data" class="form-horizontal">
                 @method('PATCH')
                 @csrf
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group" style="margin: 3mm; margin-top: 10mm">
-                        <label for="text-input" class=" form-control-label">Nama Kategori</label>
-                        <input type="text" id="text-input" name="txtcategories_name" value="{{$data->categories_name}}" class="form-control">
+                      <label for="text-input" class=" form-control-label">Bukti Pembayaran</label>
+                      <select name="txtproof" class="form-control" style="background: #202940">
+                        <option value="0">Belum Lunas</option>
+                        <option value="1">Lunas</option>
+                      </select>
                     </div>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary pull-right">Save</button>
-                <div class="clearfix"></div>
+                <button type="submit" class="btn btn-primary pull-right" style="padding-inline: 15mm">Save</button>
               </form>
               
             </div>

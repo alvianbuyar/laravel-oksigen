@@ -20,6 +20,9 @@
                     Tanggal
                 </th>
                 <th>
+                    Kode
+                </th>
+                <th>
                     Status
                 </th>
                 <th>
@@ -35,6 +38,7 @@
                 <tr>
                   <td>{{++$i}}</td>
                   <td>{{ $row->purchase_date }}</td>
+                  <td>{{ $row->code }}</td>
                   <td>
                     @if($row->purchase_status == 1)
                       <strong>Belum </strong>mengirim bukti pembayaran

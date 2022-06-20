@@ -25,7 +25,7 @@ class CartController extends Controller
     {
         $detail = detail::where('id', '=', $request->id)->first();
 
-        $purchase = purchaselog::where('id', $request->$detail->id_purchaselogs)->first();
+        $purchase = purchaselog::where('id', $detail->id_purchaselogs)->first();
         $purchase->purchase_total = $purchase->purchase_total - $detail->total_detail;
         $purchase->update();
 

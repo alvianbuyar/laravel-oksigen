@@ -16,25 +16,25 @@
                             <tr>
                                 <td>Harga Oksigen</td>
                                 <td>:</td>
-                                <td>Rp. {{$data->product_price}}</td>
+                                <td>Rp. {{number_format($data->product_price)}}</td>
                             </tr>
                             <tr>
                                 <td>Harga Tabung</td>
                                 <td>:</td>
-                                <td>Rp. {{$data->tube_price}}</td>
+                                <td>Rp. {{number_format($data->tube_price)}}</td>
                             </tr>
                             <tr>
                                 <td>Keterangan</td>
                                 <td>:</td>
                                 <td>{{$data->productcategory->categories_name}}</td>
                             </tr>
-                            <tr>
+                            {{-- <tr>
                                 <td>Jumlah Pesan</td>
                                 <td>:</td>
                                 <td>
                                   <input type="text" name="total" class="form-control" required="" value="1">
                                 </td>
-                            </tr>
+                            </tr> --}}
                             <tr>
                               <td>Pinjam Tabung</td>
                               <td>:</td>

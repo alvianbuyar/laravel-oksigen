@@ -22,7 +22,7 @@ class ProductCategoriesController extends Controller
     public function index()
     {
         //
-        $pagename = 'Product Categories';
+        $pagename = 'Kategori Produk';
         $data = productcategories::all();
         return view('admin.productcategories.index', compact('data', 'pagename'));
     }

@@ -16,8 +16,10 @@
             </div>
         </div>
         <div class="card-body">
+          <div class="row justify-content-between align-items-center">
             <h3>Detail Pemesanan</h3>
-
+            <h3>{{ $purchase->code }}</h3>
+          </div>
             <table class="table">
               <thead class="text-primary">
                 <th>
@@ -47,7 +49,7 @@
                 @foreach($purchase_detail as $i=>$row)
                 <tr>
                     <td>{{++$i}}</td>
-                    <td>Rp. {{$row->addproducts->product_name}}</td>
+                    <td>{{$row->addproducts->product_name}}</td>
                     <td>Rp. {{number_format($row->addproducts->product_price)}}</td>
 
                     @if($row->loan_status == 0)

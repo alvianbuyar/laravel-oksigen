@@ -7,7 +7,7 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header card-header-primary">
-              <h4 class="card-title">Edit Tube Status</h4>
+              <h4 class="card-title">Edit Status Tabung</h4>
             </div>
             <div class="card-body">
 
@@ -31,7 +31,7 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group" style="margin: 3mm; margin-top: 10mm">
-                      <label for="text-input" class=" form-control-label">Tube Status</label>
+                      <label for="text-input" class=" form-control-label">Status Tabung</label>
                       <select name="txttube_status" class="form-control" style="background: #202940">
                         <option value="0">Tabung Belum Kembali</option>
                         <option value="1">Tabung Sudah Kembali</option>

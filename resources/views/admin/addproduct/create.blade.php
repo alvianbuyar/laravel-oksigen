@@ -7,7 +7,7 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header card-header-primary">
-              <h4 class="card-title">Add New Product</h4>
+              <h4 class="card-title">Tambah Produk Baru</h4>
             </div>
             <div class="card-body">
 
@@ -30,19 +30,19 @@
                 <div class="row">
                     <div class="col-md-12">
                       <div class="form-group" style="margin: 3mm; margin-top: 10mm">
-                        <label for="text-input" class=" form-control-label ">Product Series Number</label>
+                        <label for="text-input" class=" form-control-label ">Nomor Seri Produk</label>
                         <input type="text" id="text-input" name="txtproduct_seriesnumber" class="form-control">
                       </div>
                     </div>
                     <div class="col-md-7">
                       <div class="form-group" style="margin: 3mm">
-                        <label for="text-input" class="form-control-label">Product Name</label>
+                        <label for="text-input" class="form-control-label">Nama Produk</label>
                         <input type="text" id="text-input" name="txtproduct_name" class="form-control">
                       </div>
                     </div>
                     <div class="col-md-5">
                       <div class="form-group" style="margin: 3mm">
-                        <label for="select" class=" form-control-label">Product Categories</label>
+                        <label for="select" class=" form-control-label">Kategori</label>
                         <select name="txtid_categories" id="select" class="form-control" style="background: #202940">
 
                           @foreach($categories_data as $productcategories)
@@ -55,19 +55,19 @@
                     </div>
                     <div class="col-md-12 ">
                       <div class="form-control-group" style="margin: 3mm">
-                        <label for="file">Choose Image</label>
+                        <label for="file">Pilih Gambar</label>
                         <input type="file" name="product_image" class="form-control">
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group" style="margin: 3mm">
-                        <label for="text-input" class=" form-control-label">Product Price</label>
+                        <label for="text-input" class=" form-control-label">Harga Oksigen</label>
                         <input type="text" id="text-input" name="txtproduct_price" class="form-control">
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group" style="margin: 3mm">
-                        <label for="text-input" class=" form-control-label">Tube Price</label>
+                        <label for="text-input" class=" form-control-label">Harga Tabung</label>
                         <input type="text" id="text-input" name="txttube_price" class="form-control">
                       </div>
                     </div>

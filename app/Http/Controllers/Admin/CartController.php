@@ -26,7 +26,7 @@ class CartController extends Controller
         // $data = purchaselog::where('purchase_status', '=', 0)->get();
         // return view('admin.cart.index', compact('data', 'pagename'));
 
-        $pagename = 'cart';
+        $pagename = 'Keranjang';
         $data = detail::all();
         return view('admin.cart.index', compact('data', 'pagename'));
     }

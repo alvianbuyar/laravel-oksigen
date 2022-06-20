@@ -21,7 +21,7 @@ class PurchaseLogController extends Controller
     public function index()
     {
         //
-        $pagename = 'Puchase Log';
+        $pagename = 'Data Pemesan';
         // $data = purchaselog::all();
         $data = purchaselog::where('purchase_status', '!=', 0)->get();
         return view('admin.purchaselog.index', compact('data', 'pagename'));
@@ -68,6 +68,9 @@ class PurchaseLogController extends Controller
     public function edit($id)
     {
         //
+        $pagename = 'Edit Proof';
+        $data = purchaselog::find($id);
+        return view('admin.purchaselog.edit', compact('data', 'pagename'));
     }
 
     /**
@@ -80,6 +83,16 @@ class PurchaseLogController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'txtproof' => 'required',
+        ]);
+
+        $data = purchaselog::find($id);
+
+        $data->proof = $request->get('txtproof');
+        $data->save();
+
+        return redirect('admin\purchaselog')->with('Success', 'Tube status updated successfully');
     }
 
     /**

@@ -1,5 +1,17 @@
 @extends('admin.layout.master')
 @section('content')
+
+<script>
+  var _yuser=JSON.parse('{!! json_encode($months) !!}');
+  var _xuser=JSON.parse('{!! json_encode($monthCount) !!}');
+
+  var _yout=JSON.parse('{!! json_encode($monthsss) !!}');
+  var _xout=JSON.parse('{!! json_encode($monthCountss) !!}');
+
+  var _yin=JSON.parse('{!! json_encode($monthss) !!}');
+  var _xin=JSON.parse('{!! json_encode($monthCounts) !!}');
+</script>
+
 <div class="content">
         <div class="container-fluid">
           <div class="row">
@@ -8,12 +20,12 @@
               <script>
                 const ctx3 = document.getElementById('chartUser').getContext('2d');
                 const chartUser = new Chart(ctx3, {
-                    type: 'line',
+                    type: 'bar',
                     data: {
-                        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                        labels: _yuser,
                         datasets: [{
-                            label: '# of Votes',
-                            data: [12, 19, 3, 5, 2, 3],
+                            label: 'User',
+                            data: _xuser,
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',
                                 'rgba(54, 162, 235, 0.2)',
@@ -50,10 +62,10 @@
                 const chartPeminjam = new Chart(ctx2, {
                     type: 'bar',
                     data: {
-                        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                        labels: _yin,
                         datasets: [{
-                            label: '# of Votes',
-                            data: [12, 19, 3, 5, 2, 3],
+                            label: 'Barang Masuk',
+                            data: _xin,
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',
                                 'rgba(54, 162, 235, 0.2)',
@@ -88,12 +100,12 @@
               <script>
               const ctx1 = document.getElementById('chartPemesan').getContext('2d');
               const chartPemesan = new Chart(ctx1, {
-                  type: 'line',
+                  type: 'bar',
                   data: {
-                      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                      labels: _yout,
                       datasets: [{
-                          label: '# of Votes',
-                          data: [12, 19, 3, 5, 2, 3],
+                          label: 'Barang Keluar',
+                          data: _xout,
                           backgroundColor: [
                               'rgba(255, 99, 132, 0.2)',
                               'rgba(54, 162, 235, 0.2)',
@@ -129,7 +141,7 @@
             <div class="col-lg-6 col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title">Loan Log's</h4>
+                  <h4 class="card-title">Log Peminjam Tabung</h4>
                 </div>
                 <div class="card-body table-responsive">
                   <table class="table table-hover">

@@ -14,31 +14,34 @@
                 <table id="datatables" class="table">
                   <thead class=" text-primary" style="background-color: #202940">
                     <th>
-                      Number
+                      Kode
                     </th>
                     <th>
-                      Product
+                      Series
                     </th>
                     <th>
-                      Name
+                      Produk
                     </th>
                     <th>
-                      Address
+                      Nama
                     </th>
                     <th>
-                      Call Number
+                      Alamat
                     </th>
                     <th>
-                      Loan
+                      Nomor HP
                     </th>
                     <th>
-                      Purchase Date
+                      Pinjam
                     </th>
                     <th>
-                      Tube Status
+                      Tanggal Pesan
                     </th>
                     <th>
-                      Edit Tube Status
+                      Status Tabung
+                    </th>
+                    <th>
+                      Status Tabung
                     </th>
                     {{-- <th>
                       Delete
@@ -49,41 +52,44 @@
 
                       @foreach($data as $i=>$row)
                         @if($row->purchaselogs->purchase_status !=0)
-                          <tr>
-                            <td>{{$row->addproducts->product_seriesnumber}}</td>
-                            <td>{{$row->addproducts->product_name}}</td>
-                            <td>{{$row->purchaselogs->users->name}}</td>
-                            <td>{{$row->purchaselogs->users->address}}</td>
-                            <td>{{$row->purchaselogs->users->phone_number}}</td>
+                          @if($row->purchaselogs->proof !=0)
+                            <tr>
+                              <td>{{$row->purchaselogs->code}}</td>
+                              <td>{{$row->addproducts->product_seriesnumber}}</td>
+                              <td>{{$row->addproducts->product_name}}</td>
+                              <td>{{$row->purchaselogs->users->name}}</td>
+                              <td>{{$row->purchaselogs->users->address}}</td>
+                              <td>{{$row->purchaselogs->users->phone_number}}</td>
 
-                            @if($row->loan_status == 0)
-                              <td>Tidak</td>
-                            @else
-                              <td>Pinjam</td>
-                            @endif
-
-                            <td>{{$row->purchaselogs->purchase_date}}</td>
-
-                            @if($row->loan_status == 0)
-                              <td>Dibeli</td>
-                            @else
-                              @if($row->tube_status == 0)
-                                <td>Belum kembali</td>
+                              @if($row->loan_status == 0)
+                                <td>Tidak</td>
                               @else
-                                <td>Sudah kembali</td>
+                                <td>Pinjam</td>
                               @endif
-                            @endif
 
-                            @if($row->loan_status == 0)
-                              <td><a href="#" class='btn btn-danger'>Edit</a></td>
-                            @else
-                              @if($row->tube_status == 0)
-                                <td><a href="{{route('detail.edit', $row->id)}}" class='btn btn-success'>Edit</a></td>
+                              <td>{{$row->purchaselogs->purchase_date}}</td>
+
+                              @if($row->loan_status == 0)
+                                <td>Dibeli</td>
                               @else
-                                <td><a href="{{route('detail.edit', $row->id)}}" class='btn btn-danger'>Edit</a></td>
+                                @if($row->tube_status == 0)
+                                  <td>Belum kembali</td>
+                                @else
+                                  <td>Sudah kembali</td>
+                                @endif
                               @endif
-                            @endif
-                          </tr>
+
+                              @if($row->loan_status == 0)
+                                <td><a href="#" class='btn btn-danger'>Edit</a></td>
+                              @else
+                                @if($row->tube_status == 0)
+                                  <td><a href="{{route('detail.edit', $row->id)}}" class='btn btn-success'>Edit</a></td>
+                                @else
+                                  <td><a href="{{route('detail.edit', $row->id)}}" class='btn btn-danger'>Edit</a></td>
+                                @endif
+                              @endif
+                            </tr>
+                          @endif
                         @endif  
                       @endforeach
 

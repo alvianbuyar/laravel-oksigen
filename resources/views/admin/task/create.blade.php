@@ -7,7 +7,7 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header card-header-primary">
-              <h4 class="card-title">Add New Task</h4>
+              <h4 class="card-title">Tambah Task Baru</h4>
             </div>
             <div class="card-body">
 
@@ -30,7 +30,7 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group" style="margin: 3mm; margin-top: 10mm">
-                      <label for="text-input" class=" form-control-label">Task Description</label>
+                      <label for="text-input" class=" form-control-label">Deskripsi Task</label>
                       <input type="text" id="text-input" name="txttask_description" class="form-control">
                     </div>
                   </div>

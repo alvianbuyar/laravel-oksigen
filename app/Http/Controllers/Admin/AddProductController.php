@@ -24,7 +24,7 @@ class AddProductController extends Controller
     public function index()
     {
         //
-        $pagename = 'Add New Product';
+        $pagename = 'Data Produk';
         $data = addproduct::all();
         return view('admin.addproduct.index', compact('data', 'pagename'));
     }
@@ -81,6 +81,7 @@ class AddProductController extends Controller
         ]);
 
         $product_data->save();
+        alert()->success('Anda berhasil menambah data', 'Sukses');
         return redirect('admin\addproduct')->with('Success', 'data product saved successfully', compact('imgName'));
     }
 
@@ -154,6 +155,7 @@ class AddProductController extends Controller
         $product->tube_price = $request->get('txttube_price');
 
         $product->save();
+        alert()->success('Anda berhasil mengubah data', 'Sukses');
         return redirect('admin\addproduct')->with('Success', 'data product saved successfully');
     }
 
@@ -174,6 +176,7 @@ class AddProductController extends Controller
         }
 
         $product->delete();
+        alert()->success('Anda berhasil menghapus data', 'Sukses');
         return redirect('admin\addproduct')->with('Success', 'category data deleted successfully');
     }
 }

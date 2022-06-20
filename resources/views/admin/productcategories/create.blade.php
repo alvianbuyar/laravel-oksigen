@@ -7,7 +7,7 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header card-header-primary">
-              <h4 class="card-title">Add New Categories</h4>
+              <h4 class="card-title">Tambah Kategori Baru</h4>
             </div>
             <div class="card-body">
 
@@ -30,7 +30,7 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group" style="margin: 3mm; margin-top: 10mm">
-                      <label for="text-input" class=" form-control-label">Categories Name</label>
+                      <label for="text-input" class=" form-control-label">Nama Kategori</label>
                       <input type="text" id="text-input" name="txtcategories_name" class="form-control">
                     </div>
                   </div>

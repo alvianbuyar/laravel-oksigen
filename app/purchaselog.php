@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class purchaselog extends Model
 {
     //
+    protected $fillable = [
+        'proof',
+    ];
+
     public function details()
     {
         return $this->hasMany('App\detail', 'id_addproducts', 'id');

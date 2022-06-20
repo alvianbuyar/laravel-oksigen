@@ -7,26 +7,26 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header card-header-primary d-flex justify-content-between align-items-center">
-              <h4 class="card-title" style="margin-left: 5mm">Cart Table</h4>
+              <h4 class="card-title" style="margin-left: 5mm">Tabel Keranjang</h4>
             </div>
             <div class="card-body">
               <div class="table-responsive table-striped table-bordered">
                 <table id="datatables" class="table">
                   <thead class=" text-primary" style="background-color: #202940">
                     <th>
-                      Number
+                      Series
                     </th>
                     <th>
-                      Name
+                      Nama
                     </th>
                     <th>
-                      Phone Number
+                      Nomor HP
                     </th>
                     <th>
                       KTP
                     </th>
                     <th>
-                      Purchase Date
+                      Tanggal Pesan
                     </th>
                     <th>
                       Total
