@@ -214,15 +214,85 @@
 <script src="{{ asset('public/assets/dataTables/datatables.min.js') }}"></script>
 <script>
   $(document).ready(function() {
+    exportButton = $('#datatable').DataTable( {
+        ordering: false,
+        autoWidth: false,
+        // dom: "Blfrtip",
+        columnDefs: [
+          {
+            targets: -1,
+            orderable: false,
+          }
+        ],
+        buttons: [
+          {
+            text: 'Export',
+            extend: 'excelHtml5',
+            className: 'btn btn-success btn-round',
+            exportOptions: {
+              columns: ':visible:not(.not-export-col)'
+            }
+          }
+        ]
+    });
+    exportButton.buttons().container().appendTo('#export-button')
+} );
+
+$(document).ready(function() {
     $('#datatables').DataTable( {
         ordering: false,
         autoWidth: false,
+        border: false,
         columnDefs: [
-            {
-                targets: ['_all'],
-                className: 'mdc-data-table__cell'
-            }
-        ]
-    } );
+          {
+            targets: ['_all'],
+            className: 'mdc-data-table__cell'
+          }
+        ],
+    });
 } );
 </script>
+
+<style>
+  .dataTables_filter input,
+  .dataTables_filter :hover,
+  .dataTables_filter :focus{
+    color: white;
+    background-color: #202940;
+    border-color: #455272
+  }
+
+  .dataTables_length select,
+  .dataTables_length :hover,
+  .dataTables_length :focus
+  .dataTables_length :optional{
+    color: white;
+    background-color: #202940;
+    border-color: #455272
+  }
+
+  .page-link{
+    color: rgb(182, 182, 182) !important;
+    background-color: #202940 !important;
+    border-color: #202940 !important
+  }
+
+  .page-item.active .page-link{
+    background-color: rgb(153, 153, 153) !important;
+    color: white !important;
+  }
+
+  .table-bordered{
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: none
+  }
+
+  .form-control,
+  .form-control :hover{
+    color: white !important;
+    background-color: #202940 !important;
+    border-color: #455272 !important
+  }
+</style>

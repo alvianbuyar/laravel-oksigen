@@ -76,8 +76,14 @@
             </table>
             <form action="{{ url('history') }}/{{ $purchase->id }}" method="post" enctype="multipart/form-data">
               @csrf
-                <div class="form-group">
+                {{-- <div class="form-group">
                   <a class="btn btn-simple btn-block" type="button" style="color: grey">
+                      Pilih File Bukti Pembayaran
+                  </a>
+                  <input type="file" name="payment_image" value="{{ $purchase->payment_image }}" class="form-control">
+                </div> --}}
+                <div class="form-group">
+                  <a class="btn btn-primary btn-block" type="button" style="color: rgb(255, 255, 255)">
                       Pilih File Bukti Pembayaran
                   </a>
                   <input type="file" name="payment_image" value="{{ $purchase->payment_image }}" class="form-control">

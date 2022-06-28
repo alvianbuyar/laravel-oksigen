@@ -10,7 +10,7 @@
               <h4 class="card-title" style="margin-left: 5mm">Tabel Keranjang</h4>
             </div>
             <div class="card-body">
-              <div class="table-responsive table-striped table-bordered">
+              <div class="table-responsive table-striped">
                 <table id="datatables" class="table">
                   <thead class=" text-primary" style="background-color: #202940">
                     <th>

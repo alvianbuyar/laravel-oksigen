@@ -8,10 +8,11 @@
           <div class="card">
             <div class="card-header card-header-primary d-flex justify-content-between align-items-center">
               <h4 class="card-title" style="margin-left: 5mm">Detail's Table</h4>
+              <div id="export-button"></div>
             </div>
             <div class="card-body">
               <div class="table-responsive table-striped table-bordered">
-                <table id="datatables" class="table">
+                <table id="datatable" class="table">
                   <thead class=" text-primary" style="background-color: #202940">
                     <th>
                       Kode
@@ -40,7 +41,7 @@
                     <th>
                       Status Tabung
                     </th>
-                    <th>
+                    <th class="not-export-col">
                       Status Tabung
                     </th>
                     {{-- <th>
@@ -80,12 +81,12 @@
                               @endif
 
                               @if($row->loan_status == 0)
-                                <td><a href="#" class='btn btn-danger'>Edit</a></td>
+                                <td class="not-export-col"><a href="#" class='btn btn-danger'>Edit</a></td>
                               @else
                                 @if($row->tube_status == 0)
-                                  <td><a href="{{route('detail.edit', $row->id)}}" class='btn btn-success'>Edit</a></td>
+                                  <td class="not-export-col><a href="{{route('detail.edit', $row->id)}}" class='btn btn-success'>Edit</a></td>
                                 @else
-                                  <td><a href="{{route('detail.edit', $row->id)}}" class='btn btn-danger'>Edit</a></td>
+                                  <td class="not-export-col><a href="{{route('detail.edit', $row->id)}}" class='btn btn-danger'>Edit</a></td>
                                 @endif
                               @endif
                             </tr>
