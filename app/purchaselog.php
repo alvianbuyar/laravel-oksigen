@@ -15,6 +15,10 @@ class purchaselog extends Model
     {
         return $this->hasMany('App\detail', 'id_addproducts', 'id');
     }
+    public function addproducts()
+    {
+        return $this->belongsTo('App\addproduct', 'id');
+    }
 
     public function users()
     {

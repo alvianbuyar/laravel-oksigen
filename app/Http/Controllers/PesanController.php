@@ -27,7 +27,7 @@ class PesanController extends Controller
     public function pesan(Request $request, $id)
     {
         $data = addproduct::where('id', $id)->first();
-        $date = Carbon::now();
+        $date = Carbon::today();
 
         //cek validasi totals
         if ($request->total > $data->stock) {

@@ -57,7 +57,7 @@
                 <img src="{{ asset('public/productImage/'. $row->product_image) }}" height="160px" width="235px">
               </div>
               <div class="card-footer text-center">
-                <h6>{{$row->product_name}}</h6>
+                <h6>{{$row->product_name}} {{$row->product_seriesnumber}}</h6>
                 <p style="margin: -2mm auto 4mm auto">Rp. {{number_format($row->product_price)}}</p>
                 <a href="{{ url('pesan') }}/{{ $row->id }}" class="btn btn-primary btn-block">Pesan</a>
               </div>

@@ -51,4 +51,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('/purchaselog', 'Admin\PurchaseLogController');
     Route::resource('/loanlog', 'Admin\LoanLogController');
     Route::resource('/detail', 'Admin\DetailController');
+    // Route::post('detail', 'Admin\DetailController@index')->name('index');
+    Route::post('/searchdetail', 'Admin\DetailController@search')->name('search');
 });

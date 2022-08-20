@@ -23,6 +23,9 @@
                     Kode
                 </th>
                 <th>
+                    Bukti Pembayaran
+                </th>
+                <th>
                     Status
                 </th>
                 <th>
@@ -45,6 +48,14 @@
                     @endif
                     @if($row->purchase_status == 2)
                       <strong>Sudah </strong>mengirim bukti pembayaran
+                    @endif
+                  </td>
+                  <td>
+                    @if($row->proof != 1)
+                      <strong>Tunggu </strong>validasi admin
+                    @endif
+                    @if($row->purchase_status == 2)
+                      <strong>Proses pengiriman</strong>
                     @endif
                   </td>
                   <td>Rp. {{ number_format($row->purchase_total) }}</td>

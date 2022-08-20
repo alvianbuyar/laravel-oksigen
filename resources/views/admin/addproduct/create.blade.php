@@ -31,13 +31,13 @@
                     <div class="col-md-12">
                       <div class="form-group" style="margin: 3mm; margin-top: 10mm">
                         <label for="text-input" class=" form-control-label ">Nomor Seri Produk</label>
-                        <input type="text" id="text-input" name="txtproduct_seriesnumber" class="form-control">
+                        <input type="text" id="text-input" name="txtproduct_seriesnumber" value="100" class="form-control">
                       </div>
                     </div>
                     <div class="col-md-7">
                       <div class="form-group" style="margin: 3mm">
                         <label for="text-input" class="form-control-label">Nama Produk</label>
-                        <input type="text" id="text-input" name="txtproduct_name" class="form-control">
+                        <input type="text" id="text-input" name="txtproduct_name" value="Oksigen" class="form-control">
                       </div>
                     </div>
                     <div class="col-md-5">
@@ -62,13 +62,13 @@
                     <div class="col-md-12">
                       <div class="form-group" style="margin: 3mm">
                         <label for="text-input" class=" form-control-label">Harga Oksigen</label>
-                        <input type="text" id="text-input" name="txtproduct_price" class="form-control">
+                        <input type="text" id="text-input" name="txtproduct_price" value="100000" class="form-control">
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group" style="margin: 3mm">
                         <label for="text-input" class=" form-control-label">Harga Tabung</label>
-                        <input type="text" id="text-input" name="txttube_price" class="form-control">
+                        <input type="text" id="text-input" name="txttube_price" value="2000000" class="form-control">
                       </div>
                     </div>
                   </div>

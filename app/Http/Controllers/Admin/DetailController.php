@@ -6,6 +6,7 @@ use App\detail;
 use App\Http\Controllers\Controller;
 use App\purchaselog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DetailController extends Controller
 {
@@ -24,6 +25,7 @@ class DetailController extends Controller
         //
         $pagename = 'Detail';
         $data = detail::all();
+
         return view('admin.detail.index', compact('data', 'pagename'));
     }
 
@@ -108,5 +110,17 @@ class DetailController extends Controller
 
         $loan->delete();
         return redirect('admin\detail')->with('Success', 'detail log deleted successfully');
+    }
+
+    public function search(Request $request)
+    {
+        $pagename = 'Edit Detail Loan';
+        $fromDate = $request->input('fromDate');
+        $toDate = $request->input('toDate');
+
+        $query = detail::whereBetween('updated_at', [$fromDate, $toDate])
+            ->get();
+
+        return view('admin.detail.search', compact('query', 'pagename'));
     }
 }

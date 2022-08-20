@@ -77,16 +77,20 @@
             <form action="{{ url('history') }}/{{ $purchase->id }}" method="post" enctype="multipart/form-data">
               @csrf
                 {{-- <div class="form-group">
-                  <a class="btn btn-simple btn-block" type="button" style="color: grey">
-                      Pilih File Bukti Pembayaran
-                  </a>
-                  <input type="file" name="payment_image" value="{{ $purchase->payment_image }}" class="form-control">
-                </div> --}}
-                <div class="form-group">
                   <a class="btn btn-primary btn-block" type="button" style="color: rgb(255, 255, 255)">
                       Pilih File Bukti Pembayaran
                   </a>
                   <input type="file" name="payment_image" value="{{ $purchase->payment_image }}" class="form-control">
+                </div> --}}
+
+                {{-- <div class="custom-file">
+                  <input class="custom-file-input" id="customFile" type="file" name="payment_image" value="{{ $purchase->payment_image }}">
+                  <label class="custom-file-label" for="customFile" style="color: rgb(197, 197, 197)">Masukkan bukti pembayaran</label>
+                </div> --}}
+
+                <div class="mb-2">
+                  <label for="formFile" class="form-label" style="color: rgb(197, 197, 197);font-weight:600">Pilih bukti pembayaran</label>
+                  <input class="form-control" id="formFile" type="file" name="payment_image" value="{{ $purchase->payment_image }}">
                 </div>
                 
                 <button type="submit" class="btn btn-primary btn-block btn-round float-right" rel="tooltip" style="margin-top:5mm">Kirim Bukti Pembayaran</button>

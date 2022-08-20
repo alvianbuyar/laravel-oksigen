@@ -36,15 +36,20 @@
                         <input type="text" name="phone_number" class="form-control" value="{{ $user->phone_number }}">
                       </div>
                     </div>
-                    <div class="col-md-12">
+                    {{-- <div class="col-md-12">
                       <div class="form-group">
                         <label for="file">Foto KTP</label>
-
                         <a class="btn btn-simple btn-block" type="button" style="color: grey">
                             Pilih File
                         </a>
-
                         <input type="file" name="ktp_image" value="{{ $user->ktp_image }}" class="form-control">
+                      </div>
+                    </div> --}}
+
+                    <div class="col-md-12">
+                      <div class="mb-2">
+                        <label for="formFile" class="form-label">Masukkan Foto KTP</label>
+                        <input class="form-control" id="formFile" type="file" name="ktp_image" value="{{ $user->ktp_image }}">
                       </div>
                     </div>
                   </div>
