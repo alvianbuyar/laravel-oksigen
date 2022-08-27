@@ -5,8 +5,8 @@
   <meta charset="utf-8" />
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('public/asset/img/apple-icon.png') }}">
-  <link rel="icon" type="image/png" href="{{ asset('public/assets/img/rajawali-white.png') }}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('asset/img/apple-icon.png') }}">
+  <link rel="icon" type="image/png" href="{{ asset('assets/img/rajawali-white.png') }}">
   <title>
    CV Iswara
   </title>
@@ -15,12 +15,12 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <!-- Nucleo Icons -->
-  <link href="{{ asset('public/asset/css/nucleo-icons.css') }}" rel="stylesheet" />
+  <link href="{{ url('asset/css/nucleo-icons.css') }}" rel="stylesheet"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <!-- CSS Files -->
-  <link href="{{ asset('public/asset/css/blk-design-system.css?v=1.0.0') }}" rel="stylesheet" />
+  <link href="{{ url('asset/css/blk-design-system.css?v=1.0.0') }}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="{{ asset('public/asset/demo/demo.css') }}" rel="stylesheet" />
+  <link href="{{ url('asset/demo/demo.css') }}" rel="stylesheet" />
 
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
@@ -127,23 +127,23 @@
     </div>
 
     <!--   Core JS Files   -->
-    <script src="{{ asset('public/asset/js/core/jquery.min.js') }}"></script>
-    <script src="{{ asset('public/asset/js/core/popper.min.js') }}"></script>
-    <script src="{{ asset('public/asset/js/core/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('public/asset/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
+    <script src="{{ asset('asset/js/core/jquery.min.js') }}"></script>
+    <script src="{{ asset('asset/js/core/popper.min.js') }}"></script>
+    <script src="{{ asset('asset/js/core/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('asset/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
     <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
-    <script src="{{ asset('public/asset/js/plugins/bootstrap-switch.js') }}"></script>
+    <script src="{{ asset('asset/js/plugins/bootstrap-switch.js') }}"></script>
     <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-    <script src="{{ asset('public/asset/js/plugins/nouislider.min.js') }}"></script>
+    <script src="{{ asset('asset/js/plugins/nouislider.min.js') }}"></script>
     <!-- Chart JS -->
-    <script src="{{ asset('public/asset/js/plugins/chartjs.min.js') }}"></script>
+    <script src="{{ asset('asset/js/plugins/chartjs.min.js') }}"></script>
     <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
-    <script src="{{ asset('public/asset/js/plugins/moment.min.js') }}"></script>
-    <script src="{{ asset('public/asset/js/plugins/bootstrap-datetimepicker.js') }}"></script>
+    <script src="{{ asset('asset/js/plugins/moment.min.js') }}"></script>
+    <script src="{{ asset('asset/js/plugins/bootstrap-datetimepicker.js') }}"></script>
     <!-- Black Dashboard DEMO methods, don't include it in your project! -->
-    <script src="{{ asset('public/asset/demo/demo.js') }}"></script>
+    <script src="{{ asset('asset/demo/demo.js') }}"></script>
     <!-- Control Center for Black UI Kit: parallax effects, scripts for the example pages etc -->
-    <script src="{{ asset('public/asset/js/blk-design-system.min.js?v=1.0.0') }}"></script>
+    <script src="{{ asset('asset/js/blk-design-system.min.js?v=1.0.0') }}"></script>
 
  
     <script>

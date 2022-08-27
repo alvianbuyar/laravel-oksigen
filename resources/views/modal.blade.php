@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <img src="{{ asset('public/assets/img/alur pemesanan.jpg') }}">
+                <img src="{{ asset('assets/img/alur pemesanan.jpg') }}">
             </div>
         </div>
     </div>

@@ -50,7 +50,7 @@
 
                           @if(!empty($row->purchaselogs->users->ktp_image))
                             <td>
-                              <img src="{{ asset('public/ktpImage/'. $row->purchaselogs->users->ktp_image) }}" height="160px" width="235px">
+                              <img src="{{ asset('ktpImage/'. $row->purchaselogs->users->ktp_image) }}" height="160px" width="235px">
                             </td>
                           @else
                             <td>

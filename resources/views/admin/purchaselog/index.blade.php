@@ -46,7 +46,7 @@
 
                         @if(!empty($row->users->ktp_image))
                           <td>
-                            <img src="{{ asset('public/ktpImage/'. $row->users->ktp_image) }}" height="160px" width="235px">
+                            <img src="{{ asset('ktpImage/'. $row->users->ktp_image) }}" height="160px" width="235px">
                           </td>
                         @else
                           <td>
@@ -55,7 +55,7 @@
 
                         @if(!empty($row->payment_image))
                           <td>
-                            <img src="{{ asset('public/paymentImage/'. $row->payment_image) }}" height="160px" width="235px">
+                            <img src="{{ asset('paymentImage/'. $row->payment_image) }}" height="160px" width="235px">
                           </td>
                         @else
                           <td>

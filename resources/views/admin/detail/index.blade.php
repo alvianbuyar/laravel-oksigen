@@ -10,7 +10,7 @@
               <h4 class="card-title" style="margin-left: 5mm">Detail's Table</h4>
               <div id="export-button"></div>
             </div>
-            <form action="{{ route('search') }}" method="POST">
+            {{-- <form action="{{ route('search') }}" method="POST">
               @csrf
               <br>
               <div class="container">
@@ -32,7 +32,7 @@
                   </div>
                 </div>
               </div>
-            </form>
+            </form> --}}
             <div class="card-body">
               <div class="table-responsive table-striped table-bordered">
                 <table id="datatable" class="table">
@@ -91,7 +91,7 @@
                                 <td>Pinjam</td>
                               @endif
 
-                              <td>{{$row->updated_at}}</td>
+                              <td>{{$row->purchaselogs->purchase_date}}</td>
 
                               @if($row->loan_status == 0)
                                 <td>Dibeli</td>
