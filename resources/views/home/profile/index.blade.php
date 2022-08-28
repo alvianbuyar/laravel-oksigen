@@ -4,7 +4,7 @@
 
 <div class="wrapper" style="margin-bottom: -10mm">
     <div class="page-header">
-      <img src="{{ asset('public/asset/img/path4.png') }}" class="path">
+      <img src="{{ asset('asset/img/path4.png') }}" class="path">
       <div class="container align-items-center" style="margin-top: 50mm">
         <div class="row">
           <div class="col-lg-6 col-md-6">
@@ -15,7 +15,7 @@
           <div class="col-lg-4 col-md-6 ml-auto mr-auto">
             <div class="card card-coin card-plain">
               {{-- <div class="card-header">
-                <img src="{{ asset('public/asset/img/mike.jpg') }}" class="img-center img-fluid rounded-circle">
+                <img src="{{ asset('asset/img/mike.jpg') }}" class="img-center img-fluid rounded-circle">
               </div> --}}
               <div class="card-body">
                 <div class="tab-content tab-subcategories">

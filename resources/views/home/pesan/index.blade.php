@@ -55,7 +55,7 @@
               <div class="col-lg-6">
                 <div id="carousel">
                   <div class="carousel">
-                      <img class="d-block w-100" src="{{ asset('public/productImage/'. $data->product_image) }}" height="380px" width="235px" alt="Product Image">
+                      <img class="d-block w-100" src="{{ asset('productImage/'. $data->product_image) }}" height="380px" width="235px" alt="Product Image">
                   </div>
                 </div>
               </div>

@@ -1,26 +1,26 @@
 <!--   Core JS Files   -->
-<script src="{{ asset('public/assets/js/core/jquery.min.js') }}"></script>
-<script src="{{ asset('public/assets/js/core/popper.min.js') }}"></script>
-<script src="{{ asset('public/assets/js/core/bootstrap-material-design.min.js') }}"></script>
+<script src="{{ asset('assets/js/core/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
+<script src="{{ asset('assets/js/core/bootstrap-material-design.min.js') }}"></script>
 <script src="https://unpkg.com/default-passive-events"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<script src="{{ asset('public/assets/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <!--  Google Maps Plugin    -->
 {{-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> --}}
 <!-- Chartist JS -->
-<script src="{{ asset('public/assets/js/plugins/chartist.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/chartist.min.js') }}"></script>
 <!--  Notifications Plugin    -->
 
-<script src="{{ asset('public/assets/js/plugins/bootstrap-notify.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/bootstrap-notify.js') }}"></script>
 <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-<script src="{{ asset('public/assets/js/material-dashboard.js') }}"></script>
+<script src="{{ asset('assets/js/material-dashboard.js') }}"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-{{-- <script src="{{ asset('public/assets/demo/demo.js') }}"></script> --}}
+{{-- <script src="{{ asset('assets/demo/demo.js') }}"></script> --}}
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
@@ -217,7 +217,7 @@
     });
 </script>
 
-<script src="{{ asset('public/assets/dataTables/datatables.min.js') }}"></script>
+<script src="{{ asset('assets/dataTables/datatables.min.js') }}"></script>
 <script>
   $(document).ready(function() {
     exportButton = $('#datatable').DataTable( {

@@ -18,7 +18,7 @@
         <div class="col-lg-6 mb-lg-auto">
           <div class="card card-register">
             <div class="card-header">
-              <img class="card-img" src="public/asset/img/square1.png" alt="Card image">
+              <img class="card-img" src="asset/img/square1.png" alt="Card image">
               <h4 class="card-title">{{ __('Register') }}</h4>
             </div>
             <div class="card-body">

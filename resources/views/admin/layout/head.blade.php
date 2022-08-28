@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ asset('public/assets/css/material-dashboard.css') }}"/>
+<link rel="stylesheet" href="{{ asset('assets/css/material-dashboard.css') }}"/>
 
 <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
     <div class="container-fluid">

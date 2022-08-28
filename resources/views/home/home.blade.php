@@ -54,7 +54,7 @@
           <div class="col-md-3 mb-3">
             <div class="card">
               <div class="card-body" style="margin-bottom: -3mm">
-                <img src="{{ asset('public/productImage/'. $row->product_image) }}" height="160px" width="235px">
+                <img src="{{ asset('productImage/'. $row->product_image) }}" height="160px" width="235px">
               </div>
               <div class="card-footer text-center">
                 <h6>{{$row->product_name}} {{$row->product_seriesnumber}}</h6>

@@ -4,7 +4,7 @@
 
 <div class="wrapper" style="margin-bottom: -10mm">
     <div class="page-header">
-      <img src="{{ asset('public/asset/img/path4.png') }}" class="path">
+      <img src="{{ asset('asset/img/path4.png') }}" class="path">
       <div class="container align-items-center" style="margin-top: 50mm">
         <div class="row">
           <div class="col-lg-5 col-md-5" style="margin-right: 20mm">

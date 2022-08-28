@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="public/asset/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="{{ asset('public/assets/img/rajawali-white.png') }}">
+  <link rel="apple-touch-icon" sizes="76x76" href="asset/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="{{ asset('assets/img/rajawali-white.png') }}">
   <title>
    CV Iswara
   </title>
@@ -14,11 +14,11 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <!-- Nucleo Icons -->
-  <link href="{{ asset('public/asset/css/nucleo-icons.css') }}" rel="stylesheet" />
+  <link href="{{ asset('asset/css/nucleo-icons.css') }}" rel="stylesheet" />
   <!-- CSS Files -->
-  <link href="{{ asset('public/asset/css/blk-design-system.css?v=1.0.0') }}" rel="stylesheet" />
+  <link href="{{ asset('asset/css/blk-design-system.css?v=1.0.0') }}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="{{ asset('public/asset/demo/demo.css') }}" rel="stylesheet" />
+  <link href="{{ asset('asset/demo/demo.css') }}" rel="stylesheet" />
 </head>
 
 <body class="index-page">
@@ -105,13 +105,13 @@
                 <div id="carouselExampleControls" class="carousel slide">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img class="d-block w-100" src="public/asset/img/oksigen1.jpg" alt="First slide">
+                      <img class="d-block w-100" src="asset/img/oksigen1.jpg" alt="First slide">
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="public/asset/img/oksigen2.jpg" alt="Second slide">
+                      <img class="d-block w-100" src="asset/img/oksigen2.jpg" alt="Second slide">
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="public/asset/img/oksigen3.jpg" alt="Third slide">
+                      <img class="d-block w-100" src="asset/img/oksigen3.jpg" alt="Third slide">
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -130,7 +130,7 @@
         @include('modal')
         
       <div class="section section-download" id="#download-section" data-background-color="black" style="margin-top: -1cm">
-        <img src="public/asset/img/path1.png" class="path">
+        <img src="asset/img/path1.png" class="path">
         <div class="container">
           <div class="row justify-content-md-center">
             <div class="text-center col-md-12 col-lg-8">
@@ -205,23 +205,23 @@
     </footer>
   </div>
   <!--   Core JS Files   -->
-  <script src="{{ asset('public/asset/js/core/jquery.min.js') }}"></script>
-  <script src="{{ asset('public/asset/js/core/popper.min.js') }}"></script>
-  <script src="{{ asset('public/asset/js/core/bootstrap.min.js') }}"></script>
-  <script src="{{ asset('public/asset/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
+  <script src="{{ asset('asset/js/core/jquery.min.js') }}"></script>
+  <script src="{{ asset('asset/js/core/popper.min.js') }}"></script>
+  <script src="{{ asset('asset/js/core/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('asset/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
   <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
-  <script src="{{ asset('public/asset/js/plugins/bootstrap-switch.js') }}"></script>
+  <script src="{{ asset('asset/js/plugins/bootstrap-switch.js') }}"></script>
   <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-  <script src="{{ asset('public/asset/js/plugins/nouislider.min.js') }}"></script>
+  <script src="{{ asset('asset/js/plugins/nouislider.min.js') }}"></script>
   <!-- Chart JS -->
-  <script src="{{ asset('public/asset/js/plugins/chartjs.min.js') }}"></script>
+  <script src="{{ asset('asset/js/plugins/chartjs.min.js') }}"></script>
   <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
-  <script src="{{ asset('public/asset/js/plugins/moment.min.js') }}"></script>
-  <script src="{{ asset('public/asset/js/plugins/bootstrap-datetimepicker.js') }}"></script>
+  <script src="{{ asset('asset/js/plugins/moment.min.js') }}"></script>
+  <script src="{{ asset('asset/js/plugins/bootstrap-datetimepicker.js') }}"></script>
   <!-- Black Dashboard DEMO methods, don't include it in your project! -->
-  <script src="{{ asset('public/asset/demo/demo.js') }}"></script>
+  <script src="{{ asset('asset/demo/demo.js') }}"></script>
   <!-- Control Center for Black UI Kit: parallax effects, scripts for the example pages etc -->
-  <script src="{{ asset('public/asset/js/blk-design-system.min.js?v=1.0.0') }}"></script>
+  <script src="{{ asset('asset/js/blk-design-system.min.js?v=1.0.0') }}"></script>
   <script>
     $(document).ready(function() {
       blackKit.initDatePicker();
